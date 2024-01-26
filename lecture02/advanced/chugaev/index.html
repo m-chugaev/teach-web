@@ -8,9 +8,76 @@
 <body>
     <section class="chugaev">
         <h2>Chugaev</h2>
+        <div class="salaries">
+            <div class="salaries__menu">
+                <div class="menu">
+                    <h3 class="menu__title">Квалификации</h3>
+                    <ul class="menu__content">
+                        <li class="menu-button">
+                            <div class="menu-button__name">Все</div>
+                            <div class="menu-button__content">167к</div>
+                        </li>
+                        <li class="menu-button">
+                            <div class="menu-button__name">Lead</div>
+                            <div class="menu-button__content">338к</div>
+                        </li>
+                        <li class="menu-button">
+                            <div class="menu-button__name">Senior</div>
+                            <div class="menu-button__content">308к</div>
+                        </li>
+                        <li class="menu-button">
+                            <div class="menu-button__name">Middle</div>
+                            <div class="menu-button__content">173к</div>
+                        </li>
+                        <li class="menu-button">
+                            <div class="menu-button__name">Junior</div>
+                            <div class="menu-button__content">64к</div>
+                        </li>
+                        <li class="menu-button">
+                            <div class="menu-button__name">Intern</div>
+                            <div class="menu-button__content">43к</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="salaries__content">Content</div>
+        </div>
         <!-- Разметка -->
         <style>
+            .chugaev {
+                background-color: #eee;
+                padding: 10px;
+            }
+
             /* Стили */
+            .salaries {
+                display: grid;
+                grid-template-columns: 264px 100%;
+                grid-gap: 16px;
+            }
+
+            .salaries__menu,
+            .salaries__content {
+                background-color: white;
+                border-radius: 8px;
+                padding: 24px;
+            }
+
+            .menu__content {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 0;
+            }
+
+            .menu-button {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                padding: 13px 16px;
+                background-color: #eee;
+                border-radius: 6px;
+            }
         </style>
         <script>
             // Скрипты
