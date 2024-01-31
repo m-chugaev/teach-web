@@ -207,6 +207,7 @@
     <!-- Добавляет краткую характеристику сверху или снизу от символов, 
         заключенных в элементе <ruby>, выводится уменьшенным шрифтом. -->
     <s>не актуально</s><br>
+
     <p><small>imlittle</small></p>
     <select title="выпадающий список">
         <option>Пункт 1</option>
@@ -222,7 +223,57 @@
         и что из этого получилось.</p>
        </section>
        <!-- <style> 	Подключает встраиваемые таблицы стилей. -->
-    <input type="text" value="inline-block" placeholder="">
+
+
+
+    <div title="Все виды инпутов">
+        <p><input type="text" value="TEXT" placeholder=""></p>
+        <p><input type="button" value="button"></p>
+        <div>
+            <input type="checkbox" id="horns" name="horns" />
+            <label for="horns">Horns</label>
+            <input type="checkbox" id="horns2" name="horns2" />
+            <label for="horns2">Horns2</label>
+        </div>
+
+        <p><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/></p>
+
+        <p> <input type="hidden" name="password" value="pupkin"></p>
+
+        <p><input type="password" id="pass" name="password" minlength="8" required/></p>
+
+
+        <fieldset>
+            <legend>Select a maintenance drone:</legend>
+          
+            <div>
+              <input type="radio" id="huey" name="drone" value="huey" checked />
+              <label for="huey">Huey</label>
+            </div>
+          
+            <div>
+              <input type="radio" id="dewey" name="drone" value="dewey" />
+              <label for="dewey">Dewey</label>
+            </div>
+          
+            <div>
+              <input type="radio" id="louie" name="drone" value="louie" />
+              <label for="louie">Louie</label>
+            </div>
+        </fieldset>
+
+        <div class="controls">
+            <label for="id">User ID:</label>
+            <input type="text" id="id" name="id" />
+        
+            <input type="reset" value="Reset the form" />
+            <input type="submit" value="Submit" />
+        </div>
+        <input type="image" id="image" alt="Login" src="/Saiky.png" />
+        
+    </div>
+    
+
    
     <script>
         document.getElementById('myButton').onclick = myFunction;
