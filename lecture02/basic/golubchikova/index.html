@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html long="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Golubchikova</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <section class="Golubchikova">
+            <h2>Golubchikova</h2>
+            <div class="salaries">
+                <div class="salaries__menu">
+                    <div class="menu">
+                        <h3 class="menu__title">Квалификации</h3>
+                        <ul class="menu__content">
+                            <li class="menu-button" onclick="changeContent('all')">
+                                <div class="menu-button__name">Все</div>
+                                <div class="menu-button__content">167к</div>
+                            </li>
+                            <li class="menu-button" onclick="changeContent('lead')">
+                                <div class="menu-button__name">Lead</div>
+                                <div class="menu-button__content">338к</div>
+                            </li>
+                            <li class="menu-button" onclick="changeContent('senior')">
+                                <div class="menu-button__name">Senior</div>
+                                <div class="menu-button__content">308к</div>
+                            </li>
+                            <li class="menu-button" onclick="changeContent('middle')">
+                                <div class="menu-button__name">Middle</div>
+                                <div class="menu-button__content">173к</div>
+                            </li>
+                            <li class="menu-button" onclick="changeContent('junior')">
+                                <div class="menu-button__name">Junior</div>
+                                <div class="menu-button__content">64к</div>
+                            </li>
+                            <li class="menu-button" onclick="changeContent('intern')">
+                                <div class="menu-button__name">Intern</div>
+                                <div class="menu-button__content">43к</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="salaries__content" id="contentContainer"></div>
+            </div>
+        </section>
+    </body>
+</html>

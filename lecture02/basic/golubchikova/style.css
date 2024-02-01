@@ -1,0 +1,62 @@
+.ZP {
+    padding: 16px 0px;
+    font-weight: 700;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.general {
+    display: flex;
+    gap: 8px;
+}
+
+.general_salary {
+    display: flex;
+    flex-direction: column;
+}
+
+.zp {
+    display: flex;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 21px;
+    
+}
+
+.image {
+    margin-top: 45px;
+}
+
+.Golubchikova {
+    background-color: #eee;
+    padding: 10px;
+}
+
+.salaries {
+    display: grid;
+    grid-template-columns: 264px auto;
+    grid-gap: 16px;
+}
+
+.salaries__menu,
+.salaries__content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.menu__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+}
+
+.menu-button {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 16px;
+    background-color: #eee;
+    border-radius: 6px;
+}
