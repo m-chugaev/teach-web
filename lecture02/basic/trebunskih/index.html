@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tags</title>
 </head>
-<body>
-    <a href="https://vk.com/asurtem">Гипертекст ссылка</a>
+<body> block <br> inline <br>
+    <a href="https://vk.com/asurtem">inline</a>
     <br>
+    
+    <abbr title="Расшифровка аббревиатуры">inline</abbr><br>
+    <address> 
+        Block
 
-    <abbr title="Расшифровка аббревиатуры">АББРЕВИАТУРА</abbr><br>
-    <address>
         ЗАО «Компания»
 
         Адрес: ул. Пушкина, д. 10, г. Москва
@@ -18,48 +20,63 @@
         Телефон: +7 (495) 123-45-67
 
         Email: info@company.com
-    </address><br>
-    <!-- <area> Представляет собой гиперссылку с текстом, 
+    </address>
+    
+    <br>
+    <!-- <area> NONE Представляет собой гиперссылку с текстом, 
         соответствующей определенной области на карте-изображении
          или активную область внутри карты-изображения  -->
 
     <article> 
+        BLOCK
         <!-- представляет собой независимый фрагмент
          веб-страницы и, как правило, включает «шапку», 
          основное содержимое и «подвал», в которых располагаются 
          такие части, как заголовок, текст, имя автора, дата публикации, 
          метки, рейтинг статьи и др. <article> обычно применяется для статей сайта, 
          сообщений блога и форума, комментариев. -->
-        <h1>Я артикль в H1</h1>
-        <p>История о том, как возле столовой появились загадочные розовые 
-        следы с шестью пальцами, и почему это случилось. </p>
+        <h1>BLOCK</h1>
+        <p>Block </p>
         <aside>
+            block
             <p>Мультфильм заработал $87 миллионов во время первого выпуска.</p>
             <!-- Косвенно связано с основным содержанием -->
         </aside>
+        <audio controls autoplay>inline</audio>
         <!-- <audio>Я издам звук</audio> -->
     </article>
-    <b>Полужирный</b><br>
+    <b>Inline</b><br>
+    <base target="_blank"> None
     <!-- <base> задаёт базовый адрес url, от него вычисляются все относительные адреса -->
-    <bdi>Для арабского текста, который надо отделить от всего текста</bdi><br>
-    <bdo>Как написано в dir, такое направление текста и будет</bdo>
-    <blockquote>Когда я ем, я много ем<br> ©Лев Толстый    </blockquote>
-    <!-- <br> - Перенос на новую строку -->
-    <button onclick="myFunction()">Я кнопка</button>
+    <bdi title="Для арабского текста, который надо отделить от всего текста">Inline</bdi><br>
+    <bdo title="Как написано в dir, такое направление текста и будет">Inline</bdo>
+    <blockquote>Block
+        Когда я ем, я много ем<br> ©Лев Толстый    </blockquote>
+    <!-- <br> inline - Перенос на новую строку -->
+    <button onclick="myFunction()">inline-block</button>
+    <canvas id="mycanvas" moz-opaque>inline</canvas>
+
     <!-- <canvas title="Я храню изображения"></canvas> -->
     <p>
     <table>
+       
+        <col align="center"> table-column
+        
+        table
         <caption>
-          Caption tag
+            table-caption
         </caption>
-        <tr>
-          <th>Login</th>
+    
+        <tr> table-row
+          <th>table-cell</th>
           <th>Email</th>
         </tr>
+        
         <tr>
-          <td>user1</td>
+          <td>table-cell</td>
           <td>user1@sample.com</td>
         </tr>
+
         <!-- <col align="center"> выравнивание по центру -->
         <!-- Разница между свойствами тегов <colgroup> и <col> не очень велика и состоит в следующем.
         <colgroup> позволяет объединять колонки в определенные группы -->
@@ -69,90 +86,87 @@
         </tr>
     </table></p>
       <!-- <data> чем-то похоже на класс -->
-    <!-- <tfoot> 	Определяет нижний колонтитул таблицы. -->
-    <p><time>1957-10-04</time> запущен первый искусственный спутник Земли.</p>
+    <!-- <tfoot> table-footer-group	Определяет нижний колонтитул таблицы. -->
+    <p><time>inline</time> запущен первый искусственный спутник Земли.</p>
     <!-- <track> 	Добавляет субтитры для элементов <audio> и <video>. -->
-        <u>подчерк без акцента</u><br>
-    <!-- <wbr> 	Указывает браузеру возможное место разрыва длинной строки. -->
-        <var>Переменная</var><br>
-    <cite>Я курсив</cite><br>
-    <sup>Надстрокой</sup><br>
-    <sub>Подстрочный</sub><br>
-    <code>Hello World!</code>
+        <u title="подчерк без акцента">inline</u><br>
+    <!-- <wbr> inline 	Указывает браузеру возможное место разрыва длинной строки. -->
+        <var title="Переменная">inline</var><br>
+    <cite title="курсив">inline</cite><br>
+    <sup title="Надстрокой">inline</sup><br>
+    <sub title="Подстрокой">inline</sub><br>
+    <code title="обычно для кода">inline!</code>
 
 
       <!-- список определений -->
     <dl> 
-    <dt>Термин 1</dt>
-        <dd>Определение термина 1</dd>
+        block
+    <dt>Block</dt>
+        <dd>Block</dd>
     <dt>Термин 2</dt>
         <dd>Определение термина 2</dd>
     </dl>
-    <del>удалил</del>
-    <details>
-        <summary>Информация об авторе</summary>
+    <del>inline</del>
+    <details> block
+        <summary title="Информация об авторе">list-item</summary>
         <p>Бендер Родригез</p>
        </details>
     <details>Покажи, что у тебя есть!</details>
-    <dfn>Термин</dfn>
+    <dfn>inline</dfn>
     <dialog open>
-        <p>Greetings, one and all!</p>
+        <p>block</p>
     </dialog><br><br>
-    <p><em title="курсив">Lorem ipsum dolor sit amet</em></p>
-    <!-- <embed> используется для загрузки и отображения объектов -->
+    <p><em title="курсив">inline</em></p>
+    <!-- <embed> inline используется для загрузки и отображения объектов -->
 
-    <fieldset>
-        <legend>Работа со временем</legend>
-              <input type="checkbox"> создание пунктуальности (никогда не 
-               будете никуда опаздывать);<br>
+    <fieldset> block
+        <legend>block</legend>
+              <input type="checkbox"> inline-block ;<br>
               <input type="checkbox"> излечение от пунктуальности (никогда 
                никуда не будете торопиться);<br>
               <input type="checkbox"> изменение восприятия времени и часов.
         <p><input type="submit"></p>
     </fieldset>
     <!-- Список чекбоксов -->
-    <figure>
-        <figcaption>Описание для фигур</figcaption>
+    <figure>block
+        <figcaption>block</figcaption>
     </figure>
     <!-- Это контейенр -->
 
-    <footer>
-        Copyright Кристина Ветрова
-    </footer>
+    <footer>block </footer>
     <!-- задаёт «подвал» сайта или раздела, в нём может располагаться имя автора, 
         дата документа, контактная и правовая информация -->
 
-    <!-- <form> Форма предназначена для обмена данными между пользователем и сервером -->
-    <h1>заголовок 1 уровня</h1>
-    <h6>заголовок 6 лвла</h6>
-    <!-- <hr> Горизонтальная линия для тематического разделения параграфов. -->
-    <i>опять курсив</i>
-    <!-- Тег <iframe> создает плавающий фрейм, который находится внутри обычного документа, 
+    <!-- <form> block Форма предназначена для обмена данными между пользователем и сервером -->
+    <h1>block</h1>
+    <h6>block</h6>
+    <!-- <hr> block Горизонтальная линия для тематического разделения параграфов. -->
+    <i>inline</i>
+    <!-- Тег <iframe> block создает плавающий фрейм, который находится внутри обычного документа, 
         он позволяет загружать в область заданных размеров любые другие независимые документы. -->
 
-    <!-- <img> вставить изображение -->
-    <!-- <input> тег для ввода данных -->
-    <p><ins>Выделяю текст</ins></p>
-    <kbd>Текст который вводят с клавы</kbd> <br>
-    <!-- <label>Текст</label> -->
-    <ul>
-        <li>Чебурашка</li>
+    <!-- <img> inline вставить изображение -->
+   
+    <p><ins>inline</ins></p>
+    <kbd title="Текст который вводят с клавы">inline</kbd> <br>
+    <ul>block
+        <li>list-item</li>
         <li>Крокодил Гена</li>
         <li>Шапокляк</li>
     </ul>  
-    <!--  В отличие от тега <a>, тег <link> размещается 
+    <!--  В отличие от тега <a>, тег <link> NONE размещается 
         всегда внутри контейнера <head> и не создает ссылку. -->
 
     <h1 title="По желанию можно писать в таком атрибуте описание тега">Основные теги</h1>
     <hr>
     <!-- Список тегов с указанием основных атрибутов и контентом в виде свойства display  -->
-    <!-- <main> Контейнер для основного уникального содержимого документа. 
+    <!-- <main> block Контейнер для основного уникального содержимого документа. 
         На одной странице должно быть не более одного элемента -->
-    <!-- <map> 	Создаёт активные области на карте-изображении. 
+    <!-- <map> inline Создаёт активные области на карте-изображении. 
         Является контейнером для элементов <area>. -->
     <div>
         <p>Температура воды</p>
-        <meter value="0" max="100" low="10" high="60">Низкая</meter>
+        <meter value="0" max="100" low="10" high="60">inline-block</meter>
         <meter value="30" max="100" low="10" high="60">Нормальная</meter>
         <meter value="80" max="100" low="10" high="60">Горячая</meter>
         <meter value="100" max="100">Кипяток</meter>
@@ -160,40 +174,42 @@
     
     <p>
     <nav>
+        block
         <a href="1.html">Чебурашка</a> | <a href="2.html">Гена</a> |
         <a href="3.html">Шапокляк</a> | <a href="4.html">Лариска</a>
     </nav></p>
 
-    <mark>Жёлтый</mark>    
+    <mark>inline</mark>    
     <div>block</div>
     <span>inline</span>
-    <!-- <noscript> секция, которая не поддерживает скрипт -->
-    <!-- <object> контейнер для мультимедии -->
-    <!-- ol нумированный список -->
+    <!-- <noscript> none секция, которая не поддерживает скрипт -->
+    <!-- <object> inline контейнер для мультимедии -->
+    <!-- ol block нумированный список -->
     <optgroup label="Цвет">
-        <option value="c1">Апельсиновый</option>
+        block
+        <option value="c1">block</option>
         <option value="c2">Лимонный</option>
         <option value="c3">Персиковый</option>
     </optgroup>
 
-    <!-- <output> Поле для вывода результата вычисления, рассчитанного с помощью скрипта. -->
+    <!-- <output> inline Поле для вывода результата вычисления, рассчитанного с помощью скрипта. -->
         <!-- <p> параграф -->
-    <!-- <picture> 	Элемент-контейнер, содержащий один элемент <img> 
+    <!-- <picture> inline	Элемент-контейнер, содержащий один элемент <img> 
         и ноль или несколько элементов <source>. Сам по себе ничего не отображает. 
         Дает возможность браузеру выбирать наиболее подходящее изображение. -->
     
-    <!-- <pre> 	Выводит текст без форматирования, с сохранением пробелов и переносов текста.
+    <!-- <pre> block	Выводит текст без форматирования, с сохранением пробелов и переносов текста.
      Может быть использован для отображения компьютерного кода, 
      сообщения электронной почты и т.д. -->
 
      <p>Пожалуйста, подождите, фотографии загружаются.</p>
         <progress max="100" value="25">
-            Загружено на <span id="value">25</span>%
+            inline-block <span id="value">25</span>%
         </progress><br>
-    <p><q>краткая цитата</q></p>
-    <ruby>
-        <rb>漢<rb>字
-        <rp>(</rp><rt>kan<rt>ji<rp>)</rp>
+    <p><q title="цитата">inline</q></p>
+    <ruby>ruby
+        <rb>漢<rb>字 ruby-base
+        <rp>none(</rp><rt>kan<rt>ruby-text<rp>)</rp>
     </ruby><br>
       <!-- <p><ruby> 	Контейнер для Восточно-Азиатских символов и их расшифровки.</p> -->
     <p><ruby>
@@ -201,54 +217,54 @@
     </ruby> </p>
     <p>
         <ruby>
-            <rtc>аннотация</rtc>
+            <rtc>ruby-text-container</rtc>
         </ruby>
     </p>
     <!-- Добавляет краткую характеристику сверху или снизу от символов, 
         заключенных в элементе <ruby>, выводится уменьшенным шрифтом. -->
-    <s>не актуально</s><br>
+    <s>inline</s><br>
 
-    <p><small>imlittle</small></p>
-    <select title="выпадающий список">
-        <option>Пункт 1</option>
+    <p><small>inline</small></p>
+    <select title="inline-block">
+        <option>block</option>
         <option>Пункт 2</option>
       </select><br>
     <!-- <span> Контейнер для строчных элементов.  -->
-        <strong>Полужирный</strong><br>
-    <samp>вывод комп. программы</samp><br>
-    <section>
+        <strong>inline</strong><br>
+    <samp>inline</samp><br>
+    <section> 
         <h1>Секция</h1>
         <p>История о том, как снимали фильм, где герои отдыхали на пляже, 
         потом пришёл антагонист, избил протагонистов, сбросил их в бассейн, 
         и что из этого получилось.</p>
        </section>
-       <!-- <style> 	Подключает встраиваемые таблицы стилей. -->
+       <!-- <style> None Подключает встраиваемые таблицы стилей. -->
 
 
 
     <div title="Все виды инпутов">
-        <p><input type="text" value="TEXT" placeholder=""></p>
-        <p><input type="button" value="button"></p>
+        <p><input type="text" value="inline-block" placeholder=""></p>
+        <p><input type="button" value="inline-block"></p>
         <div>
-            <input type="checkbox" id="horns" name="horns" />
-            <label for="horns">Horns</label>
+            <input type="checkbox" id="horns" name="horns" />inline-block<br>
+            <label for="horns">inline</label>
             <input type="checkbox" id="horns2" name="horns2" />
             <label for="horns2">Horns2</label>
         </div>
 
         <p><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/></p>
 
-        <p> <input type="hidden" name="password" value="pupkin"></p>
+        <p> <input type="hidden" name="password" value="pupkin">none</p>
 
-        <p><input type="password" id="pass" name="password" minlength="8" required/></p>
+        <p><input type="password" id="pass" name="password" minlength="8" required/>inline-block    </p>
 
 
         <fieldset>
-            <legend>Select a maintenance drone:</legend>
+            <legend>block:</legend>
           
             <div>
-              <input type="radio" id="huey" name="drone" value="huey" checked />
-              <label for="huey">Huey</label>
+              <input type="radio" id="huey" name="drone" value="huey" checked />inline-block
+
             </div>
           
             <div>
@@ -264,12 +280,12 @@
 
         <div class="controls">
             <label for="id">User ID:</label>
-            <input type="text" id="id" name="id" />
+            <input type="text" id="id" name="id" />inline-block
         
-            <input type="reset" value="Reset the form" />
-            <input type="submit" value="Submit" />
+            <input type="reset" value="inline-block" />
+            <input type="submit" value="inline-block" />
         </div>
-        <input type="image" id="image" alt="Login" src="/Saiky.png" />
+        <input type="image" id="image" alt="Login" src="/Saiky.png" />inline-block
         
     </div>
     
