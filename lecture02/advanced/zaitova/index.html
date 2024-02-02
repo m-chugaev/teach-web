@@ -1,20 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaitova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaitova</title>
 </head>
 <body>
-    <section class="zaitova">
-        <h2>zaitova</h2>
-        <!-- Разметка -->
-        <style>
-            /* Стили */
-        </style>
-        <script>
-            // Скрипты
-        </script>
-    </section>
+  <section class="zaitova">
+    <h2>zaitova</h2>
+    <!-- Разметка -->
+    <div class="rod">
+      <div class="one-block">
+        <h4>Квалификации</h4>
+        <button><span class="text">Все</span><span class="number">162k</span></button>
+        <button><span class="text">Lead</span><span class="number">360k</span></button>
+        <button><span class="text">Senior</span><span class="number">308k</span></button>
+        <button><span class="text">Middle</span><span class="number">172k</span></button>
+        <button><span class="text">Junior</span><span class="number">64k</span></button>
+        <button><span class="text">Intern</span><span class="number">43k</span></button>
+      </div>
+      <div class="two-block">
+        <div class="top-line">
+          <h4>Фронтенд разработчик</h4>
+          <button class="share">Поделиться</button>
+        </div>
+        <div class="main-info">
+          <h2>162 166 ₽</h2>
+          <div class="middle-line">
+            <div>
+              <h4>145 500 ₽ +</h4>
+              <span>зарплата</span>
+            </div>
+            <div>
+              <h4>16 666 ₽</h4>
+              <span>премия</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      /* Стили */
+      body {
+        margin: 0;
+        background-color: black;
+      }
+      .zaitova {
+        padding: 20px;
+        background-color: #eee;
+      }
+      .rod {
+        display: grid;
+        grid-template-columns: 264px auto;
+        gap: 16px;
+      }
+
+      .one-block { 
+        padding-left: 20px;
+        padding-right: 20px;
+        color: black;
+        background-color:  white;
+        border-radius: 8px;
+      }
+
+      .one-block button {
+        border: none;
+        cursor: pointer;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        display: block;
+        padding: 10px;
+        width: 100%;
+      }
+      .one-block button:focus {
+        background: linear-gradient(0deg,rgba(154,135,249,.16),rgba(154,135,249,.16));
+        border: #9783fc 1px solid;
+      }
+      .one-block button span.text {
+        font-size: 13px;
+        text-align: left;
+        display: inline-block;
+        width: 50%;
+      }
+
+      .one-block button span.number {
+        font-weight: bold;
+        font-size: 13px;
+        display: inline-block;
+        width: 50%;
+        text-align: right;
+      }
+
+      .two-block {
+        padding-left: 22px;
+        color: black;
+        background-color:white;
+        border-radius: 8px;
+      }
+
+      .top-line {
+        display: flex;
+      }
+      .share {
+        border: 1px solid #ededed;
+        background-color: white;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 5px 20px;
+        margin: 22px 22px 22px auto;
+      }
+      .middle-line {
+        line-height: 1;
+        display: flex;
+        gap: 8px;
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .main-info h2, h4 {
+        margin-bottom: 0;
+      }
+      .main-info h4 {
+        margin-top: 20px;
+      }
+      .middle-line span {
+        font-size: 12px;
+        color: rgba(112, 112, 112, 0.699);
+      }
+    </style>
+  </section>
 </body>
 </html>
