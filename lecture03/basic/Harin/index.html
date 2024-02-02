@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harin</title>
+</head>
+<body>
+    <h1>Основные CSS свойства</h1>
+    <hr>
+    <a href="https://msiter.ru/references/css-reference" target="_blank">Список всех CSS свойств</a>
+    
+    <style>
+      /*Универсальное свойство, позволяющее определить все свойства шрифта за одну декларацию */
+      .font{
+        font: caption;
+        font: icon;
+        font: menu;
+      }
+      
+      /*Универсальное свойство, которое позволяет указать параметры элемента, чтобы он эффективно заполнял доступное пространство*/
+      .flex{
+        flex:auto;
+        flex: initial;
+        flex: none;
+      }
+      /*Короткое свойство, устанавливающее все свойства фона элемента за одну декларацию */
+      .background{
+        background: inherit;
+        background: inherit;
+        background: none;
+      }
+      /*Это свойство определяет расстояние от нижнего края HTML элемента до нижнего края его родительского элемента */
+      .bottom{
+        bottom: auto;
+        bottom: inherit;
+        bottom: initial;
+      }
+      /*Это свойство определяет, с какой стороны элемента запрещено его обтекание другими элементами*/
+      .clear{
+        clear: left;
+        clear: right;
+        clear: none;
+      }
+      /*Определяет, по какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с другой стороны */
+      .float{
+        float: right;
+        float: left;
+        float: none;
+      }
+      /*Это свойство определяет расстояние от верхнего края HTML элемента до верхнего края его родительского элемента */
+      .top{
+        top: auto;
+        top: inherit;
+        top: initial;
+      }
+      /*Устанавливает высоту блочных или заменяемых элементов*/
+      .height{
+        height: auto;
+        height: inherit;
+        height: initial;
+      }
+      /*Позволяет вставлять генерируемое содержание в текст веб-страницы, которое первоначально в тексте отсутствуе*/
+      .content{
+        content: normal;
+        content: url();
+        content: none;
+      }
+      /*Определяет уровень прозрачности элемента */
+      .opacity{
+        opacity: inherit;
+        opacity: initial;
+        opacity: /*тут должно быть чилсло*/;
+      }
+
+    </style>
+</body>
+</html>
