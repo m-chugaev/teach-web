@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chugaev</title>
+</head>
+<body>
+    <h1>Основные CSS свойства</h1>
+    <hr>
+    <a href="https://msiter.ru/references/css-reference" target="_blank">Список всех CSS свойств</a>
+    
+    <style>
+        /* Выписать 10 любых (без дефисов) свойств с описанием и 3 примерами */
+        /* Пример: */
+
+        /* Определяет, как элемент должен быть показан в документе */
+        .display {
+            display: block;
+            display: flex;
+            display: grid;
+        }
+        /* Универсальное свойство, позволяющее определить все свойства шрифта за одну декларацию. */
+        .font{
+            font: icon;
+            font: menu;
+            font: caption;
+        }
+        /*Это свойство позволяет определить все атрибуты рамки HTML элемента за одну декларацию.*/
+        .border{
+            border: color;
+            border: inherit;
+            border: style;
+        }
+        /*bottom определяет расстояние от нижнего края элемента до нижнего края его ближайшего родительского элемента. */
+        .bottom{
+            bottom: auto;
+            bottom: inherit;
+            bottom: initial;
+        }
+        /*свойство определяет, с какой стороны элемента запрещено его обтекание другими элементами.*/
+        .clear{
+            clear: none;
+            clear:left;
+            clear: both;
+        }
+        /*Добавляет тень к элементу.*/
+        .box-shadow{
+            box-shadow: inset;
+            box-shadow: x;
+            box-shadow: y;
+        }
+        /* columns позволяет за одну декларацию установить свойства column-width и column-count.*/
+        .columns{
+            columns: auto;
+            columns: inherit;
+            columns: initial;
+        }
+        /*filter позволяет применить различные художественные эффекты к элементам. */
+        .filter{
+            filter: blur();
+            filter: brightness();
+            filter: contrast();
+        }
+        /*Позволяет вставлять генерируемое содержание в текст веб-страницы, которое первоначально в тексте отсутствует. */
+        .content{
+            content: normal;
+            content: none;
+            content: url();
+        }
+        /*свойство определяет направление текста/написания (используется вместе со свойством unicode-bidi).*/
+        .direction{
+            direction: ltr;
+            direction: rtl;
+            direction: initial;
+        }
+        /*hyphens сообщает браузеру, как расставлять переносы слов в блоке текста.*/
+        .hyphens{
+            hyphens: none;
+            hyphens: manual;
+            hyphens: auto;
+        }
+        
+        /* Конец примера */
+    </style>
+</body>
+</html>
