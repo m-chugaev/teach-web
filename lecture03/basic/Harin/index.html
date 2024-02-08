@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harin</title>
+</head>
+<body>
+    <h1>Основные CSS свойства</h1>
+    <hr>
+    <a href="https://msiter.ru/references/css-reference" target="_blank">Список всех CSS свойств</a>
+    
+    <style>
+      /*Универсальное свойство, позволяющее определить все свойства шрифта за одну декларацию */
+      .font{
+        font: 20px Tahoma, sans-serif;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+      
+      /*Универсальное свойство, которое позволяет указать параметры элемента, чтобы он эффективно заполнял доступное пространство*/
+      .flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      /*Короткое свойство, устанавливающее все свойства фона элемента за одну декларацию */
+      .background{
+        background-color: #a10b0b;
+        background-image: url('background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      /*Это свойство определяет расстояние от нижнего края HTML элемента до нижнего края его родительского элемента */
+      .bottom{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      /*Это свойство определяет, с какой стороны элемента запрещено его обтекание другими элементами*/
+      .clear{
+        clear: both;
+        clear: left;
+        clear: right;
+      }
+      /*Определяет, по какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с другой стороны */
+      .float{
+        float: right;
+        clear: right;
+      }
+      /*Это свойство определяет расстояние от верхнего края HTML элемента до верхнего края его родительского элемента */
+      .top{
+        position: relative;
+        top: 20px;
+      }
+      /*Устанавливает высоту блочных или заменяемых элементов*/
+      .height{
+        height: 100px;
+        min-height: 100px;
+        max-height: 400px;
+      }
+      /*Позволяет вставлять генерируемое содержание в текст веб-страницы, которое первоначально в тексте отсутствует*/
+      .content::before{
+        content: "Содержимое";
+        font-style: italic;
+        color: #555;
+      }
+      /*Определяет уровень прозрачности элемента */
+      .opacity{
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+    </style>
+</body>
+</html>
