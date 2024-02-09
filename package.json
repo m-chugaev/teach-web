@@ -1,0 +1,13 @@
+{
+  "name": "teach-web",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Репозиторий для изучения web-разработки",
+  "scripts": {
+    "lecture04": "node lecture04/advanced/index.js"
+  },
+  "dependencies": {
+    "chugaev-lecture04": "github:m-chugaev/lecture04-lib"
+  },
+  "license": "ISC"
+}
