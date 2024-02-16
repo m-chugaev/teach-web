@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">
+        <div class="div-2">Спесивцев</div>
+        <div class="div-3">
+          <div class="div-4">Нажмите на квадраты ниже, чтобы изменить цвет</div>
+          <div class="div-5">
+            <div class="div-6"></div>
+            <div class="div-7"></div>
+            <div class="div-8"></div>
+            <div class="div-9"></div>
+            <div class="div-10"></div>
+            <div class="div-11"></div>
+            <div class="div-12"></div>
+            <div class="div-13"></div>
+            <div class="div-14"></div>
+            
+          </div>
+          <div class="div-15">
+            <div class="div-16"></div>
+            <div class="div-17"></div>
+            <div class="div-18"></div>
+          </div>
+          <div class="div-19">
+            <div class="div-20">Обновить страницу</div>
+            <div class="div-21">
+              <div class="div-22">Добавить 3 квадрата*</div>
+              <div class="div-23">Случайные цвета*</div>
+              <div class="div-24">Сбросить</div>
+              <div class="div-25">Сохранить</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .div {
+          align-items: center;
+          background-color: #eee;
+          display: flex;
+          flex-direction: column;
+          padding: 43px 80px;
+        }
+        @media (max-width: 991px) {
+          .div {
+            padding: 0 20px;
+          }
+        }
+        .div-2 {
+          color: #464646;
+          font: 700 24px Inter, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .div-2 {
+            max-width: 100%;
+          }
+        }
+        .div-3 {
+          border-radius: 8px;
+          background-color: #fff;
+          display: flex;
+          margin-top: 10px;
+          width: 100%;
+          max-width: 1100px;
+          flex-direction: column;
+          padding: 24px;
+        }
+        @media (max-width: 991px) {
+          .div-3 {
+            max-width: 100%;
+            padding: 0 20px;
+          }
+        }
+        .div-4 {
+          color: #464646;
+          font: 700 20px Inter, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .div-4 {
+            max-width: 100%;
+          }
+        }
+        .div-5 {
+          display: flex;
+          justify-content: space-between;
+          gap: 16px;
+          margin: 16px 24px 0 0;
+        }
+        @media (max-width: 991px) {
+          .div-5 {
+            max-width: 100%;
+            margin-right: 10px;
+            flex-wrap: wrap;
+          }
+        }
+        .div-6 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-7 {
+          border-radius: 8px;
+          background-color: #f3d952;
+          width: 100px;
+          height: 100px;
+        }
+        .div-8 {
+          border-radius: 8px;
+          background-color: #47dc4d;
+          width: 100px;
+          height: 100px;
+        }
+        .div-9 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-10 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-11 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-12 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-13 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-14 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          width: 100px;
+          height: 100px;
+        }
+        .div-15 {
+          display: flex;
+          margin-top: 16px;
+          width: 332px;
+          max-width: 100%;
+          gap: 16px;
+        }
+        .div-16 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          height: 100px;
+          flex: 1;
+        }
+        .div-17 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          height: 100px;
+          flex: 1;
+        }
+        .div-18 {
+          border-radius: 8px;
+          background-color: #e64b4b;
+          height: 100px;
+          flex: 1;
+        }
+        .div-19 {
+          justify-content: space-between;
+          align-content: flex-end;
+          row-gap: 16px;
+          flex-wrap: wrap;
+          display: flex;
+          margin-top: 24px;
+          width: 100%;
+          gap: 20px;
+          font-size: 16px;
+          color: #3a3b3e;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+        @media (max-width: 991px) {
+          .div-19 {
+            max-width: 100%;
+            white-space: initial;
+          }
+        }
+        .div-20 {
+          font-family: Inter, sans-serif;
+          border-radius: 4px;
+          border: 1px solid #ededed;
+          justify-content: center;
+          padding: 8px 16px;
+        }
+        @media (max-width: 991px) {
+          .div-20 {
+            white-space: initial;
+          }
+        }
+        .div-21 {
+          justify-content: flex-end;
+          display: flex;
+          gap: 16px;
+        }
+        @media (max-width: 991px) {
+          .div-21 {
+            max-width: 100%;
+            flex-wrap: wrap;
+            white-space: initial;
+          }
+        }
+        .div-22 {
+          font-family: Inter, sans-serif;
+          border-radius: 4px;
+          border: 1px solid #ededed;
+          flex-grow: 1;
+          justify-content: center;
+          padding: 8px 16px;
+        }
+        @media (max-width: 991px) {
+          .div-22 {
+            white-space: initial;
+          }
+        }
+        .div-23 {
+          font-family: Inter, sans-serif;
+          border-radius: 4px;
+          border: 1px solid #ededed;
+          flex-grow: 1;
+          justify-content: center;
+          padding: 8px 16px;
+        }
+        @media (max-width: 991px) {
+          .div-23 {
+            white-space: initial;
+          }
+        }
+        .div-24 {
+          font-family: Inter, sans-serif;
+          border-radius: 4px;
+          border: 1px solid #ededed;
+          flex-grow: 1;
+          justify-content: center;
+          padding: 8px 16px;
+        }
+        @media (max-width: 991px) {
+          .div-24 {
+            white-space: initial;
+          }
+        }
+        .div-25 {
+          font-family: Inter, sans-serif;
+          border-radius: 4px;
+          border: 1px solid #ededed;
+          flex-grow: 1;
+          justify-content: center;
+          padding: 8px 16px;
+        }
+        @media (max-width: 991px) {
+          .div-25 {
+            white-space: initial;
+          }
+        }
+      </style>
+    <script>
+    
+    function changeColor(square) {
+      if (square.style.backgroundColor === 'red') {
+        square.style.backgroundColor = 'yellow';
+      } else if (square.style.backgroundColor === 'yellow') {
+        square.style.backgroundColor = 'green';
+      } else {
+        square.style.backgroundColor = 'red';
+      }
+    }
+    
+    var squares = document.querySelectorAll('.div-5 > div');
+    
+    squares.forEach(function(square) {
+      square.addEventListener('click', function() {
+        changeColor(square);
+      });
+    });
+    
+    document.querySelector('.div-24').addEventListener('click', function() {
+      squares.forEach(function(square) {
+        square.style.backgroundColor = 'red';
+      });
+    });
+    
+    document.querySelector('.div-20').addEventListener('click', function() {
+      location.reload();
+    });
+    
+    document.querySelector('.div-23').addEventListener('click', function() {
+      squares.forEach(function(square) {
+        var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+        square.style.backgroundColor = randomColor;
+      });
+    });
+    
+    document.querySelector('.div-22').addEventListener('click', function() {
+      for (var i = 0; i < 3; i++) {
+        var newSquare = document.createElement('div');
+        newSquare.style.backgroundColor = 'red';
+        newSquare.classList.add('new-square');
+        document.querySelector('.div-5').appendChild(newSquare);
+        newSquare.addEventListener('click', function() {
+          changeColor(newSquare);
+        });
+      }
+    });
+    
+    window.onload = function() {
+      squares.forEach(function(square, index) {
+        var color = localStorage.getItem('squareColor' + index);
+        if (color) {
+          square.style.backgroundColor = color;
+        }
+      });
+    }
+    
+    document.querySelector('.div-25').addEventListener('click', function() {
+      squares.forEach(function(square, index) {
+        localStorage.setItem('squareColor' + index, square.style.backgroundColor);
+      });
+    });
+    </script>    
+</body>
+</html>
