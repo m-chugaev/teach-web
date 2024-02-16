@@ -9,16 +9,26 @@
     <h2>Спесивцев</h2>
     <section class="Spesivtsev">
         <script>
-            function changeContent(tabText, jobTitle, salary) {
-        
-                document.querySelectorAll('.tabs-col-button').forEach(function(btn) {
-                    btn.classList.remove('active');
-                });
-                event.currentTarget.classList.add('active');
-        
-                document.getElementById('jobTitle').textContent = jobTitle;
-                document.querySelector('.salary-title').textContent = salary;
-            }
+            const changeContent = (tabText, jobTitle, salary, prem) => {
+                    document.querySelectorAll('.tabs-col-button').forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    event.currentTarget.classList.add('active');
+
+                    document.getElementById('jobTitle').textContent = jobTitle;
+                    document.querySelector('.salary-title').textContent = (salary + (salary * prem)).toString() + '₽';
+                    document.getElementById('salary').textContent = salary.toString() + '₽';
+                    document.getElementById('prem').textContent = (salary * prem).toString() + '₽';   
+                };
+            document.addEventListener('DOMContentLoaded', () => {
+                const btn = document.querySelectorAll('.tabs-col-button');
+                if (btn.length > 0) {
+                    btn[0].classList.add('active');
+                    changeContent('Все', 'Фронтенд разработчик', 166665, 0.2);
+                } else {
+                    console.error('Элементы .tabs-col-button не найдены.');
+                }
+            });
         </script>
         <style>
             body{
@@ -144,8 +154,8 @@
                 }
                 .frequency-block{
                     display:flex;
-                    flex-direction: column;
-                    gap:8px;
+                    flex-direction: row;
+                    justify-content: space-between;
                 }
                 .frequency{
                     display: flex;
@@ -176,6 +186,9 @@
                     border-bottom: 1px dashed rgba(0,0,0,.3);
                     cursor: pointer;
                 }
+                .pointer{
+                    cursor: pointer;
+                }
             }
             
         </style>
@@ -183,29 +196,29 @@
             <section class="tabs">
                 <h2 class="tabs-title">Квалификации</h2>
                 <div class="tabs-col"> 
-                    <button class="tabs-col-button active" onclick="changeContent('Все', 'Фронтенд разработчик', '166 666 ₽')">Все<span style="font-weight: 700;">167k</span></button>
-                    <button class="tabs-col-button" onclick="changeContent('Lead', 'Фронтенд разработчик Lead', '358k')">Lead<span style="font-weight: 700;">358k</span></button>
-                    <button class="tabs-col-button" onclick="changeContent('Senior', 'Фронтенд разработчик Senior', '308k')">Senior<span style="font-weight: 700;">308k</span></button>
-                    <button class="tabs-col-button" onclick="changeContent('Middle', 'Фронтенд разработчик Middle', '173k')">Middle<span style="font-weight: 700;">173k</span></button>
-                    <button class="tabs-col-button" onclick="changeContent('Junior', 'Фронтенд разработчик Junior', '64k')">Junior<span style="font-weight: 700;">64k</span></button>
-                    <button class="tabs-col-button" onclick="changeContent('Intern', 'Фронтенд разработчик Intern', '43k')">Intern<span style="font-weight: 700;">43k</span></button>
+                    <button class="tabs-col-button active" onclick="changeContent('Все', 'Фронтенд разработчик',166665,0.2)">Все<span style="font-weight: 700;">167k</span></button>
+                    <button class="tabs-col-button" onclick="changeContent('Lead', 'Фронтенд разработчик Lead', 466665,0.2)">Lead<span style="font-weight: 700;">358k</span></button>
+                    <button class="tabs-col-button" onclick="changeContent('Senior', 'Фронтенд разработчик Senior', 366665,0.2)">Senior<span style="font-weight: 700;">308k</span></button>
+                    <button class="tabs-col-button" onclick="changeContent('Middle', 'Фронтенд разработчик Middle', 266665,0.2)">Middle<span style="font-weight: 700;">173k</span></button>
+                    <button class="tabs-col-button" onclick="changeContent('Junior', 'Фронтенд разработчик Junior', 166665,0.2)">Junior<span style="font-weight: 700;">64k</span></button>
+                    <button class="tabs-col-button" onclick="changeContent('Intern', 'Фронтенд разработчик Intern', 66665,0.2)">Intern<span style="font-weight: 700;">43k</span></button>
                 </div>
             </section>
             <section class="main-inf">
                 <section class="main-inf-top">
-                    <h2 class="main-inf-top-title" id="jobTitle">Фронтенд разработчик</h2>
-                    <button class="main-inf-top-button">
+                    <h2 class="main-inf-top-title" id="jobTitle"></h2>
+                    <button class="pointer main-inf-top-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="share" viewBox="0 0 24 24" fill="none">
                             <path d="M8.68387 13.3419C8.88616 12.9381 9 12.4824 9 12C9 11.5176 8.88616 11.0619 8.68387 10.6581M8.68387 13.3419C8.19134 14.3251 7.17449 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.17449 9 8.19134 9.67492 8.68387 10.6581M8.68387 13.3419L15.3161 16.6581M8.68387 10.6581L15.3161 7.34193M15.3161 7.34193C15.8087 8.32508 16.8255 9 18 9C19.6569 9 21 7.65685 21 6C21 4.34315 19.6569 3 18 3C16.3431 3 15 4.34315 15 6C15 6.48237 15.1138 6.93815 15.3161 7.34193ZM15.3161 16.6581C15.1138 17.0619 15 17.5176 15 18C15 19.6569 16.3431 21 18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.8255 15 15.8087 15.6749 15.3161 16.6581Z" stroke="#929CA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>Поделиться
                     </button>
                 </section>
                 <section class="main-inf-desc">
-                    <div class="">
-                        <h3 class="salary-title">166 666 ₽</h3>
+                    <div>
+                        <h3 class="salary-title"></h3>
                         <div class="salaty-block">
                             <div class="salary-block-item">
-                                <h4 class="salary-block-item-title">166 666 ₽</h4>
+                                <h4 id="salary" class="salary-block-item-title"></h4>
                                 <span class="salary-block-item-desc" style="color: #999">зарплата</span>
                             </div>
                             <div class="salary-block-item">
@@ -213,11 +226,11 @@
 
                             </div>
                             <div class="salary-block-item">
-                                <h4 class="salary-block-item-title">1 ₽</h4>
+                                <h4 id="prem" class="salary-block-item-title"></h4>
                                 <div class="salary-block-item-desc" style="color: #999">
                                     <span>премия</span>
                                     <span title="32% специалистов получают премию">
-                                        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" id="info" viewBox="0 0 24 24">
+                                        <svg class="pointer" width="20" height="20" xmlns="http://www.w3.org/2000/svg" id="info" viewBox="0 0 24 24">
                                             <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13 7C13 7.55228 12.5523 8 12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7ZM13 10V17H11V10H13ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"/>
                                         </svg>
                                     </span>
@@ -225,7 +238,7 @@
                             </div>
                         </div>                  
                     </div>
-                    <img class="main-inf-grapgh" src="./graph.jpg" alt="график" /> 
+                    <img class="main-inf-grapgh" src="./graph.png" alt="график" /> 
                     <div class="frequency-block">
                         <div class="frequency">
                             <div class="frequency-often">
