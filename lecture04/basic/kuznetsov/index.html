@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habr | Карьреа</title>
+
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="graph">
+            <div class="graph__qualification">
+                <h2 class="graph__qualification-title">Квалификации</h2>
+                <div class="graph__qualification-options">
+                    <label class="qualification ">
+                        <span class="qualification__text">
+                            <span class="qualification__level">Все</span>
+                            <span class="qualification__salary">167k</span>
+                        </span>
+                        <input type="radio" name="qualification" class="qualification__radio">
+                    </label>
+                    <label class="qualification qualification_active">
+                        <span class="qualification__text">
+                            <span class="qualification__level">Lead</span>
+                            <span class="qualification__salary">362k</span>
+                        </span>
+                        <input type="radio" name="qualification" class="qualification__radio">
+                    </label>
+                    <label class="qualification">
+                        <span class="qualification__text">
+                            <span class="qualification__level">Senior</span>
+                            <span class="qualification__salary">309k</span>
+                        </span>
+                        <input type="radio" name="qualification" class="qualification__radio">
+                    </label>
+                    <label class="qualification">
+                        <span class="qualification__text">
+                            <span class="qualification__level">Middle</span>
+                            <img width="24" height="24" src="./assets/avatar.png" alt="Avatar"
+                                class="qualification__avatar">
+                            <span class="qualification__salary">176k</span>
+                        </span>
+                        <input type="radio" name="qualification" class="qualification__radio">
+                    </label>
+                    <label class="qualification">
+                        <span class="qualification__text">
+                            <span class="qualification__level">Junior</span>
+                            <span class="qualification__salary">64k</span>
+                        </span>
+                        <input type="radio" name="qualification" class="qualification__radio">
+                    </label>
+                    <label class="qualification">
+                        <span class="qualification__text">
+                            <span class="qualification__level">Intern</span>
+                            <span class="qualification__salary">43k</span>
+                        </span>
+                        <input type="radio" name="qualification" class="qualification__radio">
+                    </label>
+                </div>
+            </div>
+            <div class="graph__diagram">
+                <div class="graph__diagram-header">
+                    <h2 class="graph__diagram-title">Lead Фронтенд разработчик</h2>
+                    <button class="graph__diagram-share base-button base-button--appearance-extra base-button--size-l">
+                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" id="share" viewBox="0 0 24 24"
+                            fill="none">
+                            <path fill="none"
+                                d="M8.68387 13.3419C8.88616 12.9381 9 12.4824 9 12C9 11.5176 8.88616 11.0619 8.68387 10.6581M8.68387 13.3419C8.19134 14.3251 7.17449 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.17449 9 8.19134 9.67492 8.68387 10.6581M8.68387 13.3419L15.3161 16.6581M8.68387 10.6581L15.3161 7.34193M15.3161 7.34193C15.8087 8.32508 16.8255 9 18 9C19.6569 9 21 7.65685 21 6C21 4.34315 19.6569 3 18 3C16.3431 3 15 4.34315 15 6C15 6.48237 15.1138 6.93815 15.3161 7.34193ZM15.3161 16.6581C15.1138 17.0619 15 17.5176 15 18C15 19.6569 16.3431 21 18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.8255 15 15.8087 15.6749 15.3161 16.6581Z"
+                                stroke="#929CA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Поделиться
+                    </button>
+                </div>
+                <div class="graph-content">
+                    <div class="graph-content__salary">
+                        <div class="graph-content__salary-main">361 666 ₽</div>
+                        <div class="graph-content__salary-sub">
+                            <div class="graph-content__salary-block">
+                                <div class="graph-content__salary-value graph-content__salary-value_main">320 000 ₽
+                                </div>
+                                <div class="graph-content__salary-comment">зарплата</div>
+                            </div>
+                            <div class="graph-content__salary-divider">+</div>
+                            <div class="graph-content__salary-block">
+                                <div class="graph-content__salary-value graph-content__salary-value_achiv">16 500 ₽
+                                </div>
+                                <div class="graph-content__salary-comment" title="22% специалистов получают премию">
+                                    премия
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="info" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13 7C13 7.55228 12.5523 8 12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7ZM13 10V17H11V10H13ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salary-bar">
+                        <div class="salary-bar__container salary-bar__container--left-avatar">
+                            <div title="10% зарабатывают меньше" class="salary-bar__min v-popper--has-tooltip">208k
+                            </div>
+                            <div title="25% зарабатывают меньше" class="salary-bar__max v-popper--has-tooltip">550k
+                            </div>
+                            <div class="salary-bar__circle-container">
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                                <div class="salary-bar__circle-item"></div>
+                            </div>
+                            <div class="salary-bar__sub-bar" style="left: 20.1945%; right: 23.8444%;">
+                                <div title="50% зарабатывают меньше
+                                " class="salary-bar__sub-bar-min v-popper--has-tooltip">277k</div>
+                                <div title="75% зарабатывают меньше
+                                " class="salary-bar__sub-bar-max v-popper--has-tooltip">468k</div>
+                            </div>
+                            <div class="salary-bar__median-divider" style="left: 45.012%;"></div>
+                            <svg class="salary-bar__median-arrow" xmlns="http://www.w3.org/2000/svg" id="bar-arrow"
+                                viewBox="0 0 12 6">
+                                <path
+                                    d="M5.34535 5.43305C5.72112 5.75848 6.27888 5.75848 6.65465 5.43305L10.9006 1.75593C11.6005 1.14979 11.1719 0 10.246 0H1.75402C0.828135 0 0.399465 1.14979 1.09937 1.75593L5.34535 5.43305Z" />
+                            </svg>
+                            <div title="90% зарабатывают меньше
+                            " class="salary-bar__median-divider-value v-popper--has-tooltip" style="left: 45.012%;">
+                                362k
+                            </div>
+                            <img title="Моя зарплата меньше, чем у 90% специалистов"
+                                class="user-avatar user-avatar--rounded salary-bar__my-avatar v-popper--has-tooltip"
+                                src="https://career.habr.com/assets/defaults/avatars/user-4ae9deaab7da70ad824797029541e20765d74e4d1707ec8708d05d2a61eee32b.png"
+                                width="44" height="44" style=""><svg class="svg-icon salary-bar__avatar-arrow"
+                                style="width: 12px; height: 12px;" width="12" height="12">
+                                <path
+                                    d="M5.34535 5.43305C5.72112 5.75848 6.27888 5.75848 6.65465 5.43305L10.9006 1.75593C11.6005 1.14979 11.1719 0 10.246 0H1.75402C0.828135 0 0.399465 1.14979 1.09937 1.75593L5.34535 5.43305Z" />
+
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="graph-content__info">
+                        <div class="graph-content__found graph-content__found_often">
+                            <span class="graph-content__found-circle"></span>
+                            Встречаются часто
+                        </div>
+                        <div class="graph-content__found graph-content__found_rare">
+                            <span class="graph-content__found-circle"></span>
+                            Встречаются редко
+                        </div>
+                        <div class="graph-content__counter">
+                            <span class="graph-content__counter-text"
+                                title="Данные анонимно оставляют сами специалисты. В диапазон от 25 до 75 перцентиля попадают зарплаты, которые встречаются часто. Отрезки справа и слева в диапазоне от 10 до 25 и от 75 до 90 перцентиля — зарплаты, которые встречаются редко.">Рассчитано</span>
+                            на основании 4 549 анкет
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const qualifications = document.querySelectorAll('.qualification');
+        const fullSalary = document.querySelector('.graph-content__salary-main');
+        const mainSalary = document.querySelector('.graph-content__salary-value_main');
+        const achivSalary = document.querySelector('.graph-content__salary-value_achiv');
+
+        const data = [
+            {
+                full_salary: 166666,
+                main_salary: 150000,
+                achiv_salary: 16666,
+            },
+            {
+                full_salary: 361666,
+                main_salary: 320000,
+                achiv_salary: 41666,
+            },
+            {
+                full_salary: 309166,
+                main_salary: 280000,
+                achiv_salary: 29166,
+            },
+            {
+                full_salary: 176666,
+                main_salary: 160000,
+                achiv_salary: 16666,
+            },
+            {
+                full_salary: 64166,
+                main_salary: 60000,
+                achiv_salary: 4166,
+            },
+            {
+                full_salary: 42500,
+                main_salary: 40000,
+                achiv_salary: 2500,
+            }
+        ];
+
+        const removeActiveQualification = () => {
+            qualifications.forEach(item => item.classList.remove('qualification_active'))
+        }
+
+        const setQualification = (item, idx) => {
+            removeActiveQualification();
+            item.classList.add('qualification_active');
+
+            fullSalary.innerHTML = `${data[idx].full_salary.toLocaleString('ru')} ₽`;
+            mainSalary.innerHTML = `${data[idx].main_salary.toLocaleString('ru')} ₽`;
+            achivSalary.innerHTML = `${data[idx].achiv_salary.toLocaleString('ru')} ₽`;
+        }
+
+        qualifications.forEach((item, idx) => item.addEventListener('click', () => setQualification(item, idx)))
+    </script>
+</body>
+
+</html>

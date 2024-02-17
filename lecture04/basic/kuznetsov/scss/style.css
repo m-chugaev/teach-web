@@ -1,0 +1,402 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic);
+:root {
+  --color-white: #fff;
+  --color-gray: #eee;
+  --color-gray-light: #c4c4c4;
+  --color-gray-dark: #999;
+  --color-gray-light-2: #f4f4f4;
+  --color-gray-light-3: #e4e4e4;
+  --color-gray-3: #4d5057;
+  --color-icon-gray: #929ca5;
+  --color-icon-purple: #a876d0;
+  --color-icon-purple-light: #c09cdd;
+  --color-ui-gray-bg: #ededed;
+  --color-ui-checkbox-bg: #666;
+  --color-ui-lightgray: #f7f7f7;
+  --color-link-blue: #1463d9;
+  --color-ui-blue: #5677fc;
+  --color-ui-blue-overlay: rgba(86, 119, 252, .12);
+  --color-font-black: #464646;
+  --color-font-gray: #757575;
+  --color-ui-red: #d34c09;
+  --color-ui-red-overlay: rgba(211, 76, 9, .12);
+  --color-ui-red-second: #ff7e75;
+  --color-ui-green: #64c178;
+  --color-ui-green-overlay: rgba(100, 193, 120, .12);
+  --color-ui-yellow: #e8a700;
+  --color-ui-orange: #f9a21f;
+  --color-ui-yellow-overlay: rgba(232, 167, 0, .12);
+  --color-green: #0c8326;
+  --color-ui-overlay: rgba(70, 70, 70, .5);
+  --color-input-focus: #f5f6f7;
+  --color-light-purple: #dbdbff;
+  --color-light-purple2: #8F7BF6;
+  --color-button-range-active: #be86eb;
+  --color-chip-bg-inactive: #ebf3ff;
+  --color-chip-bg-hover: #d1e4ff;
+  --color-chip-bg-press: #b8d5ff;
+  --color-chip-border: #a3c4f5;
+  --color-bar-blueviolet: #9f8cfa;
+  --color-blueviolet-gradient: linear-gradient(90deg, #b09fff 0%, #8d79f6 100%);
+  --color-bar-grey: rgba(237, 237, 237, .6);
+  --color-toggle-border: #9783fc;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  background-color: var(--color-gray);
+  color: var(--color-font-black);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 12px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.svg-icon {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
+
+.base-button {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  text-align: inherit;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  cursor: pointer;
+}
+
+.base-button--size-l {
+  padding: 7px 15px;
+  min-height: 36px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.base-button--appearance-extra {
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-gray-3);
+  font-weight: 700;
+  border: 1px solid var(--color-ui-gray-bg);
+}
+
+.base-dropdown__toggle > * {
+  cursor: pointer;
+}
+
+.base-button--appearance-extra:hover {
+  background-color: var(--color-gray-light-2);
+}
+
+.base-button:hover {
+  text-decoration: none;
+}
+
+.graph {
+  grid-template-columns: 264px 1fr;
+  grid-gap: 16px;
+  display: grid;
+}
+.graph__qualification {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: 24px;
+}
+.graph__qualification-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 27px;
+}
+.graph__qualification-options {
+  margin-top: 24px;
+}
+.graph__diagram {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: 24px;
+}
+.graph__diagram-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+.graph__diagram-title {
+  margin: 0;
+  font-weight: 700;
+  line-height: 27px;
+  font-size: 21px;
+}
+.graph__diagram-share {
+  gap: 8px;
+  font-size: 14px;
+}
+
+.qualification {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: var(--color-gray-light-2);
+}
+.qualification_active {
+  border-color: var(--color-toggle-border);
+}
+.qualification_active .qualification__text {
+  background: linear-gradient(0deg, rgba(154, 135, 249, 0.16), rgba(154, 135, 249, 0.16)), var(--color-white);
+}
+.qualification__text {
+  position: relative;
+  padding: 13px 16px;
+  display: flex;
+  border-radius: 6px;
+  justify-content: space-between;
+  height: 100%;
+}
+.qualification__salary {
+  font-weight: 700;
+}
+.qualification__radio {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.qualification__avatar {
+  border: 2px solid var(--color-ui-orange);
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-right: auto;
+  margin-left: 8px;
+}
+
+.graph-content {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.graph-content__salary-main {
+  font-weight: 700;
+  display: flex;
+  font-size: 42px;
+  line-height: 54px;
+  margin-bottom: 10px;
+}
+.graph-content__salary-sub {
+  display: flex;
+  gap: 8px;
+}
+.graph-content__salary-divider {
+  font-size: 21px;
+  line-height: 27px;
+  font-weight: 700;
+}
+.graph-content__salary-block {
+  display: flex;
+  font-size: 21px;
+  line-height: 27px;
+  font-weight: 700;
+  flex-direction: column;
+}
+.graph-content__salary-value {
+  font-size: 21px;
+  line-height: 27px;
+  font-weight: 700;
+}
+.graph-content__salary-comment {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--color-gray-dark);
+  display: flex;
+  gap: 2px;
+}
+.graph-content__salary-comment svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.graph-content__info {
+  display: flex;
+  align-items: center;
+  row-gap: 8px;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.graph-content__found-circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+.graph-content__found_rare .graph-content__found-circle {
+  background: #e4e4e4;
+}
+.graph-content__found_often .graph-content__found-circle {
+  background: var(--color-bar-blueviolet);
+}
+.graph-content__counter {
+  text-align: right;
+  flex-grow: 1;
+  color: var(--color-gray-dark);
+}
+.graph-content__counter-text {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.salary-bar {
+  margin-bottom: 55px;
+  margin-top: 75px;
+  width: 100%;
+}
+.salary-bar__container {
+  width: 100%;
+  height: 36px;
+  position: relative;
+  background: var(--color-bar-grey);
+  border-radius: 8px;
+}
+.salary-bar__min {
+  left: 0;
+}
+.salary-bar__max {
+  right: 0;
+}
+.salary-bar__min, .salary-bar__max {
+  position: absolute;
+  font-weight: 700;
+  color: var(--color-gray-dark);
+  top: calc(100% + 4px);
+  cursor: pointer;
+}
+.salary-bar__circle-container {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  padding: 16px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 36px;
+}
+.salary-bar__circle-item {
+  width: 4px;
+  height: 4px;
+  background: var(--color-gray-light-3);
+  border-radius: 50%;
+}
+.salary-bar__sub-bar {
+  position: absolute;
+  height: 36px;
+  background: var(--color-blueviolet-gradient);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 4px 16px rgba(142, 122, 246, 0.2392156863);
+  border-radius: 8px;
+  left: 20.1711%;
+  right: 25.5064%;
+  top: 0;
+}
+.salary-bar__sub-bar-min {
+  position: absolute;
+  font-weight: 700;
+  color: var(--color-bar-blueviolet);
+  top: calc(100% + 6px);
+  cursor: pointer;
+  left: 0;
+}
+.salary-bar__sub-bar-max {
+  position: absolute;
+  font-weight: 700;
+  color: var(--color-bar-blueviolet);
+  top: calc(100% + 6px);
+  cursor: pointer;
+  right: 0;
+}
+.salary-bar__median-divider {
+  border-radius: 6px;
+  height: 24px;
+  width: 4px;
+  top: 6px;
+  background: var(--color-white);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1019607843);
+  position: absolute;
+  transform: translate(-50%);
+  left: 44.9959%;
+}
+.salary-bar__median-arrow {
+  width: 12px;
+  height: 12px;
+  left: 44.9959%;
+  bottom: -30px;
+  fill: var(--color-bar-blueviolet);
+  transform: translate(-50%) rotate(180deg);
+  position: absolute;
+}
+.salary-bar__median-divider-value {
+  bottom: -53px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-font-black);
+  cursor: pointer;
+  left: 44.9959%;
+  position: absolute;
+  transform: translate(-50%);
+}
+.salary-bar__my-avatar {
+  top: -64px;
+  border: 2px solid var(--color-ui-orange);
+  padding: 2px;
+  cursor: pointer;
+  transform: translate(0);
+  left: 12px;
+  position: absolute;
+  border-radius: 50%;
+}
+.salary-bar__avatar-arrow {
+  width: 12px;
+  height: 12px;
+  transform: rotate(90deg);
+  top: -48px;
+  left: -4px;
+  fill: var(--color-ui-orange);
+  position: absolute;
+}/*# sourceMappingURL=style.css.map */
