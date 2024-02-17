@@ -10,44 +10,53 @@
         <h2>Trebunskih</h2>
 
 
+        <script>
+            const changeContent = (tabText, JobName, salary, prem) => {
+                document.querySelectorAll('.menu_buttons').forEach(function(btn){
+                    btn.classList.remove('active');  
+                });
+                
+                event.currentTarget.classList.add('active');
+
+                document.getElementById('JobName').textContent = JobName;
+                document.getElementById('summa').textContent = (salary + (salary * prem)).toString() + '₽';
+                document.getElementById('salary').textContent = salary.toString() + '₽';
+                document.getElementById('prem').textContent = (salary * prem).toString() + '₽';
+            };
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelectorAll('.menu_buttons');
+            if (btn.length > 0) 
+                {
+                    btn[0].classList.add('active');
+                    changeContent('Все', 'Фронтенд разработчик', 166665, 0.2);
+                } else {
+                    console.error('Элементы .tabs-col-button не найдены.');
+                }
+        });
+        </script>
+
+
 
         <div class="menu_and_content">
-            <div class="menu">
+
+            <section class="menu">
                 <h3 class="column_name">Квалификации</h3>
-                <ui class="menu_content">
-                    <li class="menu_buttons menu-button_active">
-                        <span>Все</span>
-                        <strong>167к</strong>
-                    </li>
-                    <li class="menu_buttons">
-                        <span>Lead</span>
-                        <strong>338к</strong>
-                    </li>
-                    <li class="menu_buttons">
-                        <span>Senior</span>
-                        <strong>308к</strong>
-                    </li>
-                    <li class="menu_buttons">
-                        <span>Middle</span>
-                        <strong>173к</strong>
-                    </li>
-                    <li class="menu_buttons">
-                        <span>Junior</span>
-                        <strong>64к</strong>
-                    </li>
-                    <li class="menu_buttons">
-                        <span>Intern</span>
-                        <strong>43к</strong>
-                    </li>
-                </ui>
-            </div>
+                <div class="menu_content"> 
+                    <button class="menu_buttons" active" onclick="changeContent('Все', 'Фронтенд разработчик', 139800,0.2)"><span>Все</span><strong>167к</strong></button>
+                    <button class="menu_buttons" onclick="changeContent('Lead', 'Фронтенд разработчик Lead', 282000,0.2)">Lead<strong>338к</strong></button>
+                    <button class="menu_buttons" onclick="changeContent('Senior', 'Фронтенд разработчик Senior', 257000,0.2)">Senior<strong>308к</strong></button>
+                    <button class="menu_buttons" onclick="changeContent('Middle', 'Фронтенд разработчик Middle', 144200,0.2)">Middle<strong>173к</strong></button>
+                    <button class="menu_buttons" onclick="changeContent('Junior', 'Фронтенд разработчик Junior', 53400,0.2)">Junior<strong>64к</strong></button>
+                    <button class="menu_buttons" onclick="changeContent('Intern', 'Фронтенд разработчик Intern', 36000,0.2)">Intern<strong>43к</strong></button>
+            </section>
+           
 
 
             
             <div class="content">
                 <div class="cont-column_split">
                 <div class="content__menu">
-                <h3 class="column_name">Фронтенд разработчик</h3>
+                <h3 id="JobName" class="column_name">Фронтенд разработчик</h3>
 
                 <button class="share">
 
@@ -61,24 +70,26 @@
 
                 <div>
                     <div class="zp">
-                        <div class="summa">162 166 ₽</div>
+                        <div  id="summa" class="summa"></div>
                         <div class="summ_calc">
                             <div>
-                                <div class="summ1">145 500 ₽</div>
+                                <div id="salary" class="summ1"></div>
                                 <div class="summ1_tittle">зарплата</div>
                             </div>
 
                             <div>
                                 <div class="summ1">+</div>
                             </div>
-                            
+                        
                             <div>
-                                <div class="summ1">16 666 ₽</div>
+                                <div id="prem" class="summ1"></div>
                                 <div class="summ1_tittle">
-                                        премия
-                                        <svg class="info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20" title="32% специалистов получают премию">
+                                    <span>премия</span>
+                                    <span title="38% специалистов получают премию">
+                                        <svg class="info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20">
                                             <path fill-rule="evenodd" clip-rule="evenodd" fill="#999" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13 7C13 7.55228 12.5523 8 12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7ZM13 10V17H11V10H13ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"/>
                                         </svg>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +113,7 @@
 
 
                     <div class="people__state">
-                        <span class="rasschitano">Рассчитано</span> на основании 4 430 анкет
+                        <span title="Данные анонимно оставляют сами специалисты. В диапазон от 25 до 75 перцентиля попадают зарплаты, которые встречаются часто. Отрезки справа и слева в диапазоне от 10 до 25 и от 75 до 90 перцентиля — зарплаты, которые встречаются редко." class="rasschitano">Рассчитано</span> на основании 4 430 анкет
                     </div>
                 </div>
 
@@ -215,6 +226,10 @@
                 cursor: pointer;
                 color: #4d5057;
             }
+
+            .share:hover{
+                background-color: #eee;
+            }
             
 
             .content__menu{
@@ -229,6 +244,9 @@
                 gap: 16px;
             }
             .menu_buttons{
+                font-family: sans-serif;
+                color: #464646;
+                font-size: 16px;
                 list-style: none;
                 border: 2px solid transparent;
                 border-radius: 6px;
@@ -237,6 +255,8 @@
                 padding: 14px 16px;
                 display: flex;
                 justify-content: space-between;
+                margin-bottom: 3px;
+                height: 100%;
             }
 
             .column_name
@@ -270,16 +290,13 @@
                 grid-gap: 16px;
             }
 
-            .menu-button_active {
+            .menu_buttons.active {
                 background-color: #efebff;
                 border-color: #9783fc;
             }
 
             
         </style>
-        <script>
-            // Скрипты
-        </script>
     </section>
 </body>
 </html>
