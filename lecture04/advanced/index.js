@@ -1,7 +1,7 @@
-import { Chugaev } from 'chugaev-lecture04'
+import { SecondName } from 'lecture04'
 
-const chugaev = new Chugaev('Сделал задание 4 лекции.');
-chugaev.checkIn();
+const rychin = SecondName('Рычин Андрей', 'выполнил задание!');
+rychin.checkIn();
 
 // Богатырев
 // Сорокин
