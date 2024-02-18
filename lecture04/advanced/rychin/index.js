@@ -1,7 +1,7 @@
 import { SecondName } from 'lecture04'
 
 const person  = new SecondName('Рычин Андрей', 'выполнил задание!');
-rychin.checkIn();
+person.checkIn();
 
 // Богатырев
 // Сорокин
