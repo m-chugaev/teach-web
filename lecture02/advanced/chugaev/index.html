@@ -311,7 +311,7 @@
             }
 
             function onButtonClick(event) {
-                const element = event.target;
+                const element = event.target.closest('.js-button');;
                 const sectionName = element.dataset.tab;
 
                 changeContent(sectionName);
