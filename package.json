@@ -8,8 +8,7 @@
     "spesivtsev": "node lecture04/advanced/spesivtsev/index.js"   
   },
   "dependencies": {
-    "chugaev-lecture04": "github:m-chugaev/lecture04-lib",
-    "spesivtsev": "github:AfordiumSX/lecture4"
+    "chugaev-lecture04": "github:m-chugaev/lecture04-lib"
   },
   "license": "ISC"
 }
