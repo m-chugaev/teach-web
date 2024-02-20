@@ -7,7 +7,8 @@
     "lecture04": "node lecture04/advanced/index.js"  
   },
   "dependencies": {
-    "chugaev-lecture04": "github:m-chugaev/lecture04-lib"
+    "chugaev-lecture04": "github:m-chugaev/lecture04-lib",
+    "spesivtsev": "github:AfordiumSX/lecture4"
   },
   "license": "ISC"
 }
