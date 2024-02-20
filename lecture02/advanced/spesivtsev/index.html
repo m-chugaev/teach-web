@@ -6,15 +6,20 @@
     <title>All</title>
 </head>
 <body>
-    <h2>Спесивцев</h2>
     <section class="Spesivtsev">
+        <h2>Спесивцев</h2>
         <script>
             const changeContent = (tabText, jobTitle, salary, prem) => {
                     document.querySelectorAll('.tabs-col-button').forEach(function(btn) {
                         btn.classList.remove('active');
                     });
-                    event.currentTarget.classList.add('active');
-
+                    if (event && event.currentTarget.classList) {
+                        console.log(event.currentTarget.classList);
+                        event.currentTarget.classList.add('active');
+                    } else {
+                        const firstButton = document.querySelector('.tabs-col-button');
+                        if (firstButton) firstButton.classList.add('active');
+                    }
                     document.getElementById('jobTitle').textContent = jobTitle;
                     document.querySelector('.salary-title').textContent = (salary + (salary * prem)).toString() + '₽';
                     document.getElementById('salary').textContent = salary.toString() + '₽';
