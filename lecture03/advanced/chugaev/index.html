@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Chugaev</title>
+</head>
+<body>
+    <section class="chugaev">
+        <h2>Chugaev</h2>
+        <div class="container">
+            <h3 class="title">
+                Нажмите на квадраты ниже, чтобы изменить цвет
+            </h3>
+            <div class="squares js-squares">
+            </div>
+            <div class="buttons">
+                <button class="button js-refresh">Обновить страницу</button>
+                <button class="button js-add">Добавить 3 квадрата*</button>
+                <button class="button js-random">Случайные цвета*</button>
+                <button class="button js-reset">Сбросить</button>
+                <button class="button js-save">Сохранить</button>
+            </div>
+        </div>
+        <style>
+            .container {
+                background-color: white;
+                padding: 24px;
+                border-radius: 8px;
+            }
+
+            .title {
+                margin-top: 0;
+                margin-bottom: 16px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .squares {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .squares__item {
+                height: 100px;
+                width: 100px;
+                border-radius: 8px;
+                cursor: pointer;
+                background-color: #3A3B3E;
+                transition: background-color .3s;
+            }
+
+            .squares__item[data-color="0"] {
+                background-color: #E64B4B;
+            }
+
+            .squares__item[data-color="1"] {
+                background-color: #F3D952;
+            }
+
+            .squares__item[data-color="2"] {
+                background-color: #47DC4D;
+            }
+
+            .buttons {
+                margin-top: 24px;
+                display: flex;
+                gap: 16px;
+            }
+
+            .button {
+                padding: 8px 16px;
+                background-color: transparent;
+                border: 1px solid #ededed;
+                border-radius: 4px;
+                color: #3A3B3E;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                cursor: pointer;
+            }
+
+            .button:hover {
+                background-color: #f4f4f4;
+            }
+
+            .buttons .button:first-of-type {
+                margin-right: auto;
+            }
+        </style>
+        <script>
+            (function () {
+                const COLORS = {
+                    0: 'red',
+                    1: 'yellow',
+                    2: 'green',
+                };
+                const STORAGE_KEY = 'chugaev.squares';
+                const DATA_ATTRIBUTE = 'data-color';
+                const DEFAULT_COLOR = 0;
+                const DEFAULT_COUNT = 9;
+                let squares = [];
+                const squaresParent = document.querySelector('.chugaev .js-squares');
+
+                if (squaresParent === undefined) {
+                    console.error('Ошибка! Не смогли найти элемент .js-squares на странице.');
+                    return;
+                }
+
+                function changeColor(index, node) {
+                    const incIndex = squares[index] + 1;
+                    const nextIndex = COLORS[incIndex] !== undefined ? incIndex : 0;
+                    squares[index] = nextIndex;
+                    node.setAttribute(DATA_ATTRIBUTE, nextIndex);
+                }
+
+                function createSquare(index, colorIndex) {
+                    const node = document.createElement('div');
+                    node.classList.add('squares__item');
+                    node.classList.add('js-square');
+                    node.setAttribute(DATA_ATTRIBUTE, colorIndex);
+                    node.addEventListener('click', (event) => changeColor(index, event.target));
+                    squaresParent.appendChild(node);
+                }
+
+                function updateSquares() {
+                    squaresParent.childNodes.forEach((node, index) => {
+                        node.setAttribute(DATA_ATTRIBUTE, squares[index]);
+                    });
+                }
+
+                function initSquares() {
+                    let savedSquares = [];
+
+                    try {
+                        savedSquares = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                    } catch (error) {
+                        console.error(error);
+                    }
+
+                    if (savedSquares) {
+                        squares = savedSquares;
+                    } else {
+                        for (let i = 0; i < DEFAULT_COUNT; i++) {
+                            squares.push(DEFAULT_COLOR);
+                        }
+                    }
+
+                    squaresParent.innerHTML = '';
+
+                    squares.map((colorIndex, index) => {
+                        createSquare(index, colorIndex);
+                    });
+                }
+
+                function initButtons() {
+                    const refreshButton = document.querySelector('.chugaev .js-refresh');
+                    if (refreshButton) {
+                        refreshButton.addEventListener('click', (event) => {
+                            window.location.reload();
+                        });
+                    }
+
+                    const resetButton = document.querySelector('.chugaev .js-reset');
+                    if (resetButton) {
+                        resetButton.addEventListener('click', (event) => {
+                            squares.forEach((value, index) => {
+                                squares[index] = DEFAULT_COLOR;
+                            });
+                            updateSquares();
+                        });
+                    }
+
+                    const saveButton = document.querySelector('.chugaev .js-save');
+                    if (saveButton) {
+                        saveButton.addEventListener('click', (event) => {
+                            localStorage.setItem(STORAGE_KEY, JSON.stringify(squares));
+                        });
+                    }
+
+                    const randomButton = document.querySelector('.chugaev .js-random');
+                    if (randomButton) {
+                        randomButton.addEventListener('click', (event) => {
+                            squares.forEach((value, index) => {
+                                squares[index] = Math.floor(Math.random() * Object.keys(COLORS).length);
+                            });
+                            updateSquares();
+                        });
+                    }
+
+                    const addButton = document.querySelector('.chugaev .js-add');
+                    if (addButton) {
+                        addButton.addEventListener('click', (event) => {
+                            const countItems = 3;
+                            const lastIndex = squares.length;
+
+                            for (let i = 0; i < countItems; i++) {
+                                squares.push(DEFAULT_COLOR);
+                                createSquare(lastIndex + i, DEFAULT_COLOR);
+                            }
+                        });
+                    }
+                }
+
+                function startApp() {
+                    initSquares();
+                    initButtons();
+                }
+
+                startApp();
+            })();
+        </script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,122 @@
+.background{
+    background-color: aqua;
+}
+.background2{
+    background-image: linear-gradient(#c8bdf2, #4441e6);
+}
+
+.background3{
+    background-image: url(https://img.freepik.com/free-photo/adorable-looking-kitten-with-yarn_23-2150886292.jpg?w=740&t=st=1707209036~exp=1707209636~hmac=bdfe58529dc9628fa0a3de7063cc03f14f4cec462bb34fa546ffd9f413ca4d9c);
+}
+
+
+
+
+#border{
+    border: solid red;
+}
+.border2{
+    border: dashed rgb(14, 26, 255);
+}
+.border3{
+    border: 4mm ridge rgba(211, 220, 50, .6);;
+}
+
+
+
+
+.color{
+    color:brown;
+}
+.color2{
+    color: aqua;
+}
+.color3{
+    color: blueviolet;
+}
+
+
+
+
+.cursor{
+    cursor: wait;
+}
+.cursor2{
+    cursor: pointer;
+}
+.cursor3{
+    cursor: all-scroll;
+}
+
+
+
+
+.content {
+    display: block;
+}
+.content1{
+    display: flex;
+}
+.content2{
+    display: grid;
+}
+
+
+
+.filter{
+    filter: blur(3px);
+}
+.filter2{
+    filter: drop-shadow(2px 3px 5px black);
+}
+.filter3{
+    filter: contrast(20%);
+}
+
+
+
+.margin{
+    margin: 10px 50px 20px;
+}
+.margin2{
+    margin: 150px;
+}
+.margin3{
+    margin: 10% auto;
+}
+
+
+
+.padding{
+    padding: 25px 50px 75px 100px;
+}
+.padding2{
+    padding: 10px 20px;
+}
+
+.padding3{
+    padding: 10px 3% 20px;
+}
+
+
+.font{
+    font: small-caps bold 24px/1 sans-serif;
+}
+.font2{
+    font: italic 1.2rem "Fira Sans", serif;
+}
+.font3{
+    font: bold italic large serif;
+}
+
+
+.transform{
+    transform: scale(2, 0.5);
+}
+
+.transform2{
+    transform: rotate(0.5turn);
+}
+.transform3{
+    transform: skew(10deg, 5deg);
+}
