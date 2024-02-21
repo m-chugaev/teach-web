@@ -7,7 +7,10 @@ chugaev.checkIn();
 // Сорокин
 // Черенева
 // Саилов
-// Спесивцев
+import { SecondName } from 'spesivtsev'
+
+const person = new SecondName('Спесивцев', 'Привет!');
+person.checkIn();
 // Булгаков
 // Голубчикова
 // Михалев
