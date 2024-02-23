@@ -16,7 +16,13 @@
                     btn.classList.remove('active');  
                 });
                 
-                event.currentTarget.classList.add('active');
+                if (event && event.currentTarget.classList) {
+                        console.log(event.currentTarget.classList);
+                        event.currentTarget.classList.add('active');
+                    } else {
+                        const firstButton = document.querySelector('.menu_buttons');
+                        if (firstButton) firstButton.classList.add('active');
+                }
 
                 document.getElementById('JobName').textContent = JobName;
                 document.getElementById('summa').textContent = (salary + (salary * prem)).toString() + '₽';
@@ -28,7 +34,7 @@
             if (btn.length > 0) 
                 {
                     btn[0].classList.add('active');
-                    changeContent('Все', 'Фронтенд разработчик', 166665, 0.2);
+                    changeContent('Все', 'Фронтенд разработчик', 139800, 0.2);
                 } else {
                     console.error('Элементы .tabs-col-button не найдены.');
                 }
