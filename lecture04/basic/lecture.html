@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Chugaev</title>
+</head>
+<body>
+    <section class="chugaev">
+        <h2>Chugaev</h2>
+        <div>
+            <button class="js-button">
+                Кнопка
+            </button>
+
+            <ol class="parent js-parent">
+            </ol>
+        </div>
+        <script>
+            const TEST = 10;
+            let test2;
+            test2 = 1;
+            
+            test3 = 4;
+            var test3;
+
+            console.log(TEST, test2, test3);
+
+            if (false) {
+                console.log('true')
+            } else {
+                console.log('false')
+            }
+
+            for (let index = 0; index < 10; index++) {
+                console.log(index)
+            }
+
+            const object = {
+                'key': 20,
+                '02': 30,
+            }
+
+            for (const key in object) {
+                console.log(key, object[key])
+            }
+
+            console.log(typeof(123))
+            console.log(typeof(123.2334))
+            console.log(typeof(NaN))
+            console.log(typeof('NaN'))
+            console.log(typeof("NaN"))
+            console.log(typeof(`Na
+            sdfsdf
+            sdfsdf
+            sdfsdf
+            sdfsdf
+N`))
+            console.log(typeof(true))
+            console.log(typeof(false))
+            console.log(typeof(!!''))
+
+            console.log(typeof({}))
+            console.log(typeof([]))
+
+            console.log(typeof(undefined))
+            console.log(typeof(object['notExists']))
+            console.log(typeof(null))
+
+
+            bar('Function')
+            function bar(value) {
+                console.log(value);
+            }
+
+            const foo = (value) => {
+                console.log(value);
+            }
+            foo('Function 2')
+
+            const obj = {
+                'foo': {
+                    'bar': 1
+                },
+                'nice': 'ok',
+            }
+
+            console.log(obj)
+            const objAsString = JSON.stringify(obj)
+            console.log(objAsString)
+            let objAsObj;
+            try {
+                objAsObj = JSON.parse(objAsString + 'ssdfsdf')
+            } catch (error) {
+                console.error(error)
+                objAsObj = JSON.parse(objAsString)
+            }
+
+            console.log(objAsObj)
+
+            localStorage.setItem('key', objAsString)
+            let saved = localStorage.getItem('key')
+            saved = JSON.parse(saved)
+            console.log(saved);
+            localStorage.removeItem('key')
+
+            const arr = [123, 'sddsf', {'key': 'value'}];
+            console.log(arr)
+            const arrAsString = JSON.stringify(arr)
+            console.log(arrAsString)
+        </script>
+        <script>
+            const button = document.querySelector('.js-button')
+
+            button.addEventListener('click', (event) => {
+                console.log(event.target);
+            })
+
+            const parent = document.querySelector('.js-parent')
+            console.log(parent);
+
+            function createElement() {
+                const node = document.createElement('li');
+                node.textContent = 'Elem list'
+                node.classList.add('foo')
+                node.setAttribute('title', 'tooltip')
+                parent.appendChild(node)
+            }
+
+            const COUNT_ITEMS = 10;
+
+            for (let i = 0; i < COUNT_ITEMS; i++) {
+                createElement()
+            }
+        </script>
+    </section>
+</body>
+</html>
