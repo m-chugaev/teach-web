@@ -1,0 +1,12 @@
+{
+  "name": "Trebunskih-lecture04",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Пример модуля для 4 лекции",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Trebunskih Artem",
+  "license": "ISC"
+}
