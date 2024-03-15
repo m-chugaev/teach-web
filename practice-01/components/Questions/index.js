@@ -12,7 +12,7 @@ export default function Questions() {
                             <div className={styles.accord}>
                                 <div data-w-id="4c10fe5b-3460-50ad-990c-41ff238f36c8" className={styles.question}>
                                     <div className={styles.large}>
-                                        {question.text}
+                                        <ol>{question.text}</ol>
                                     </div>
                                 </div>
                             </div>
