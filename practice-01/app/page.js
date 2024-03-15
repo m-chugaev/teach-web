@@ -18,6 +18,7 @@ export default function Home() {
         alt="Next.js"
         title="Сделано на Next.js"
       />
+      <Comment />
     </main>
   );
 }
