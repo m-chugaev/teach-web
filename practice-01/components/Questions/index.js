@@ -40,25 +40,31 @@ export default function Questions() {
                     <option value="PHP">PHP</option>
                 </select>
             </div>
+            <div className={styles.list}>
+                {filteredQuestions.map(function(question, index) {
+                    return <div className={styles.ac} key={index}>
+                        <div className={styles.faqList}>
+                            <div className={styles.accord}>
+                                <div className={styles.question}>
+                                    <div className={styles.large}>
+                                        <span>{index+1}. {question.text}</span>
+                                    </div>
 
-            <ol className={styles.list}>
-                {filteredQuestions.map(function (question, index) {
-                    return (
-                        <li key={index}>
-                            {question.text}
-                            <div className={styles.tags}>
-                                {question.tags.map(function (tag, index) {
-                                    return (
-                                        <span key={index}>
-                                            {tag}
-                                        </span>
-                                    );
-                                })}
+                                    <div className={styles.tags}>
+                                        {question.tags.map(function (tag, index) {
+                                            return (
+                                                <span key={index}>
+                                                    {tag}
+                                                </span>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
-                        </li>
-                    );
+                        </div>
+                    </div>;
                 })}
-            </ol>
+            </div>
         </div>
     );
 }
