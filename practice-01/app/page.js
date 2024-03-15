@@ -1,13 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import Questions from "../components/Questions";
-import SwitchTheme from "../components/SwitchTheme";
+import Questions from '../components/Questions';
+import RandomQuestions from '../components/RandomQuestions';
+import RandomQuestionsFrequency from '../components/RandomQuestionsFrequency';
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <Questions />
-      <SwitchTheme />
+      <RandomQuestions />
+      <RandomQuestionsFrequency />
       <Image
         className={styles.icon}
         src="/icons/next.svg"
