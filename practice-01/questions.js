@@ -253,4 +253,4 @@ const questions = [
     // остальные вопросы...
 ];
 
-
+export default questions;

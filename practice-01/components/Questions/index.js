@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import styles from './Questions.module.scss';
 import questions from "../../questions.js";
@@ -39,7 +41,7 @@ export default function Questions() {
                 </select>
             </div>
 
-            <ul className={styles.list}>
+            <ol className={styles.list}>
                 {filteredQuestions.map(function (question, index) {
                     return (
                         <li key={index}>
@@ -56,7 +58,7 @@ export default function Questions() {
                         </li>
                     );
                 })}
-            </ul>
+            </ol>
         </div>
     );
 }

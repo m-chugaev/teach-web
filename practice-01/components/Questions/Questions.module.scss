@@ -1,8 +1,3 @@
- body { 
-    font-family: Verdana, sans-serif; 
-    background-color: #ebebeb; 
-} 
-
 .container { 
     max-width: 700px; 
     margin: 0 auto; 
@@ -10,46 +5,13 @@
     background-color: #ffffff; 
     border-radius: 10px; 
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3); 
-} 
+}
 
-h1 { 
-    text-align: center; 
-    margin-bottom: 40px; 
-    color: #333333; 
-} 
-
-label { 
-    font-weight: bold; 
-    color: #666666; 
-} 
-
-select { 
-    margin-bottom: 30px; 
-    width: 100%; 
-    padding: 10px; 
-    border-radius: 5px; 
-    border: 1px solid #cccccc; 
-    color: #333333; 
-} 
-
-ul { 
-    list-style-type: none; 
-    padding: 0; 
-} 
-
-li { 
-    margin-bottom: 20px; 
-    background-color: #f2f2f2; 
-    padding: 20px; 
-    border-radius: 5px; 
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1); 
-} 
-
-.tags { 
+.tags {
     margin-top: 10px; 
-} 
+}
 
-.tags span { 
+.tags span {
     display: inline-block; 
     padding: 8px; 
     background-color: #333333; 
@@ -57,8 +19,8 @@ li {
     border-radius: 5px; 
     margin-right: 8px; 
     font-size: 12px; 
-} 
+}
 
-.tags span:last-child { 
-    margin-right: 0; 
-} 
+.tags span:last-child {
+    margin-right: 0;
+}
