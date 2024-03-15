@@ -11,8 +11,8 @@
 
 .question {
     display: flex;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
@@ -47,7 +47,7 @@
 
 .title {
     margin-top: 0rem;
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     color: #101828;
     font-size: 2.25rem;
