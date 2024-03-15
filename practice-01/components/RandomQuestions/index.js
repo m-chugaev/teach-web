@@ -1,34 +1,53 @@
-'use client';
+"use client"
+import { useState } from 'react';
+import questions from '@/questions';
 
-import styles from './RandomQuestions.module.scss';
-import questions from "../../questions.js"
-import React from 'react';
-
-export default function RandomQuestions() {
-    const [randomQuestions, setRandomQuestions] = React.useState([]);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const count = formData.get('count');
-
-        const randomQuestions = questions
-            .sort(() => Math.random() - 0.5)
-            .slice(0, count);
-        
-        setRandomQuestions(randomQuestions);
-    }
-
+export default function Home() {
+    const [questionsList, setQuestionsList] = useState([]);
+    const [history, setHistory] = useState([]);
+  
+    const generateRandomQuestions = () => {
+      const randomQuestions = [];
+      while (randomQuestions.length < 5) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        if (!randomQuestions.includes(questions[randomIndex])) {
+          randomQuestions.push(questions[randomIndex]);
+        }
+      }
+  
+      setQuestionsList(randomQuestions);
+      updateHistory(randomQuestions);
+    };
+  
+    const updateHistory = (newQuestions) => {
+      const currentDate = new Date().toLocaleString();
+      const historyItem = `${currentDate} - ${JSON.stringify(newQuestions.map(question => question.text))}`;
+  
+      const updatedHistory = [historyItem, ...history.slice(0, 9)];
+      setHistory(updatedHistory);
+    };
+  
     return (
+      <div>
+        <h1>Random Questions with History</h1>
+        <button onClick={generateRandomQuestions}>Generate Random Questions</button>
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="number" name="count" placeholder="Кол-во чисел"></input>
-                <button type="submit">Сгенерировать</button>
-            </form>
+          {questionsList.length > 0 && (
             <ol>
-                {randomQuestions.map(function(question, index) {
-                    return <li key={index}>{question.text}</li>;
-                })}
+              {questionsList.map((question, index) => (
+                <li key={index}>{question.text}</li>
+              ))}
             </ol>
+          )}
         </div>
+        <div>
+          <h2>History</h2>
+          <ol>
+            {history.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
     );
-}
+  }
