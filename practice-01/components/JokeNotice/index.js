@@ -1,7 +1,7 @@
 'use client'
 // components/JokeNotice.js
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const jokes = [
   'Почему программисты так не любят пляж? Потому что в нем есть много багов!',
@@ -32,11 +32,11 @@ const JokeNotice = () => {
         padding: '10px',
         borderRadius: '5px',
         display: showNotice ? 'block' : 'none',
+        zIndex: '10',
       }}
     >
       {joke}
     </div>
-    
   );
 };
 
