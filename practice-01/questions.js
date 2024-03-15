@@ -2,255 +2,261 @@ const questions = [
     // -- Basics
     {
         "text": "Что происходит в браузере после перехода по url",
-        "tags": ["Basics"]
+        "frequency": 1
     },
     {
         "text": "Что такое клиент-серверная архитектура, какие особенности",
-        "tags": ["Basics"]
+        "frequency": 10
     },
     {
         "text": "Расшифруйте HTTP, какие есть актуальные версии",
-        "tags": ["Basics "]
+        "frequency": 99
     },
     {
         "text": "Какие бывают типы HTTP-запросов",
-        "tags": ["Basics"]
+        "frequency": 12
     },
     {
         "text": "Какие бывают коды состояния ответа HTTP (категории в сотнях)",
-        "tags": ["Basics"]
+        "frequency": 12
     },
     {
         "text": "Что такое CORS, зачем нужен, как избежать",
-        "tags": ["Basics"]
+        "frequency": 5
     },
     {
         "text": "Что такое REST API, примеры url",
-        "tags": ["Basics"]
+        "frequency": 6
+        // https://gb.ru/blog/rest-api/
     },
     {
         "text": "Что такое GraphQL, примеры тела запроса",
-        "tags": ["Basics"]
+        "frequency": 2
     },
     {
         "text": "Что такое Cookie и зачем они используются",
-        "tags": ["Basics"]
+        "frequency": 8
+        // https://habr.com/ru/articles/710578/
     },
     {
         "text": "Что такое сложность алгоритма, нотация О большое",
-        "tags": ["Basics"]
+        "frequency": 345
+        // https://techrocks.ru/2021/04/02/big-o-notation-examples/
     },
     // -- CSS
+    // Для 3х ниже - https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance
     {
         "text": "Что такое каскад в CSS, несколько примеров",
-        "tags": ["CSS"]
+        "frequency": 53
     },
     {
         "text": "Что такое специфичность в CSS, как рассчитывается, примеры расчетов",
-        "tags": ["CSS"]
+        "frequency": 99
+
     },
     {
         "text": "Что такое наследование в CSS, какие свойства наследуются, как контролировать",
-        "tags": ["CSS"]
+        "frequency": 99
     },
     {
         "text": "Что такое препроцессоры и постпроцессоры в CSS, перечислить основные",
-        "tags": ["CSS"]
+        "frequency": 99
     },
     {
         "text": "Для чего нужны media-запросы в CSS, как работают",
-        "tags": ["CSS"]
+        "frequency": 99
     },
     {
         "text": "Какие бывают типы позиционирования в CSS, в чём особенности",
-        "tags": ["CSS"]
+        "frequency": 99
     },
     {
         "text": "Какие бывают значения у свойства display в CSS, в чём отличия",
-        "tags": ["CSS"]
+        "frequency": 99
     },
     {
         "text": "Что такое доступность и как обеспечивается доступность в браузере (HTML)",
-        "tags": ["CSS"]
+        "frequency": 99
     },
     // -- JS
+    // Часть вопросов и ответов - https://github.com/ivan-isaev21/300-questions-js/blob/main/Junior/README.MD
     {
         "text": "Что такое window и в чём отличие от document",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Какие различия между let, var и const",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Какие есть типы данных в JS",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Какие различия между примитивными и ссылочными типами",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Как работает приведение типов в JS, примеры с == и ===",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Что такое область видимости в JS, несколько примеров",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Что такое localStorage и в чём отличие от sessionStorage",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Что такое fetch, основные options и процесс получения результата",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Что такое JSON, примеры использования",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "Какие основные библиотеки для JS, в чём отличия",
-        "tags": ["JS"]
+        "frequency": 99
     },
     {
         "text": "В чём отличия между библиотекой и фреймворком",
-        "tags": ["JS"]
+        "frequency": 124
     },
     {
         "text": "Что такое менеджер пакетов, как работает npm",
-        "tags": ["JS"]
+        "frequency": 99
     },
     // -- OOP
+    // Очень кратко - https://tproger.ru/translations/oop-principles-cheatsheet
+    // Чуть подробнее - https://skillbox.ru/media/code/oop_chast_1_chto_takoe_klassy_i_obekty/
     {
         "text": "Опишите базовые принципы ООП",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Назовите несколько паттернов проектирования",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое класс и объект, в чём разница",
-        "tags": ["OOP"]
+        "frequency": 99
     },
-
     {
         "text": "Что такое абстрактный класс, примеры применения",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое интерфейс, примеры применения",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое DRY, как расшифровывается, пара примеров",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое KISS, как расшифровывается, пара примеров",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое SOLID, как расшифровывается, пара примеров",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "В чем разница между модификаторами доступа public, private и protected",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое конструктор класса",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     {
         "text": "Что такое статические методы и свойства, чем отличаются от обычных",
-        "tags": ["OOP"]
+        "frequency": 99
     },
     // Git
     // Краткие ответы - https://hackr.io/blog/git-interview-questions
     {
         "text": "Что такое Git и в чём отличие от GitHub",
-        "tags": ["Git"]
+        "frequency": 99
     },
     {
         "text": "Назовите некоторые наиболее часто используемые команды Git",
-        "tags": ["Git"]
+        "frequency": 99
     },
     {
         "text": "Что такое head с точки зрения Git",
-        "tags": ["Git"]
+        "frequency": 99
     },
     {
         "text": "Что такое конфликт с точки зрения Git и какие есть пути решения",
-        "tags": ["Git"]
+        "frequency": 99
     },
     {
         "text": "Каким образом можно переключиться на другую ветку не делая коммит сделанных изменений",
-        "tags": ["Git"]
+        "frequency": 99
     },
     {
         "text": "Опишите стратегию ветвления GitFlow",
-        "tags": ["Git"]
+        "frequency": 99
     },
     {
         "text": "Какие есть способы слияния веток (default, squash, rebase)",
-        "tags": ["Git"]
+        "frequency": 99
     },
     // Database
     // Очень просто - https://habr.com/ru/articles/555760/
     {
         "text": "Для чего нужны базы данных, примеры популярных",
-        "tags": ["Database"]
+        "frequency": 99
     },
     {
         "text": "Какие есть типы связей в базе данных, пример для каждого",
-        "tags": ["Database"]
+        "frequency": 99
     },
     {
         "text": "Что такое ключи, какие бывают, как использовать",
-        "tags": ["Database"]
+        "frequency": 99
     },
     {
         "text": "Что такое индексы, опишите структуру данных (btree)",
-        "tags": ["Database"]
+        "frequency": 67
     },
     {
         "text": "Что такое индексы, опишите структуру данных (btree)",
-        "tags": ["Database"]
+        "frequency": 34
     },
     {
         "text": "Что такое транзакции, расшифруйте ACID",
-        "tags": ["Database"]
+        "frequency": 65
     },
     {
         "text": "Что такое миграции и для чего они нужны",
-        "tags": ["Database"]
+        "frequency": 122
     },
     {
         "text": "Какие четыре основных типа JOIN в SQL",
-        "tags": ["Database"]
+        "frequency": 42
     },
     {
         "text": "В чём разница между DELETE и TRUNCATE",
-        "tags": ["Database"]
+        "frequency": 77
     },
     {
         "text": "В чём разница между WHERE и HAVING",
-        "tags": ["Database"]
+        "frequency": 32
     },
     // PHP
     // Побольше вопросов - https://github.com/ivan-isaev21/250-questions-PHP/blob/master/Junior/README.MD
     {
         "text": "Базовый синтаксис PHP, как объявить переменную, функцию, класс и объект",
-        "tags": ["PHP"]
+        "frequency": 53
     },
     {
         "text": "Что такое менеджер зависимостей, как работает composer",
-        "tags": ["PHP"]
-    }
-    // остальные вопросы...
+        "frequency": 13
+    },
 ];
 
 export default questions;

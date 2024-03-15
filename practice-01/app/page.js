@@ -3,11 +3,15 @@ import styles from "./page.module.scss";
 import Questions from '../components/Questions';
 import Comment from '../components/Comment/Comment';
 import SwitchTheme from "../components/SwitchTheme";
+import RandomQuestions from '../components/RandomQuestions';
+import RandomQuestionsFrequency from '../components/RandomQuestionsFrequency';
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <Questions />
+      <RandomQuestions />
+      <RandomQuestionsFrequency />
       <SwitchTheme />
       <Image
         className={styles.icon}
