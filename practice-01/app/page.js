@@ -3,12 +3,13 @@ import styles from "./page.module.scss";
 import Questions from '../components/Questions';
 import Comment from '../components/Comment/Comment';
 import SwitchTheme from "../components/SwitchTheme";
-
+import Random5Questions from "@/components/Top5dieFive";
 export default function Home() {
   return (
     <main className={styles.main}>
       <Questions />
       <SwitchTheme />
+      <Random5Questions />
       <Image
         className={styles.icon}
         src="/icons/next.svg"
