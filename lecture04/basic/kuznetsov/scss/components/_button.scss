@@ -1,0 +1,40 @@
+.base-button {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    text-align: inherit;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    cursor: pointer;
+}
+
+.base-button--size-l {
+    padding: 7px 15px;
+    min-height: 36px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.base-button--appearance-extra {
+    border-radius: 4px;
+    background: transparent;
+    color: var(--color-gray-3);
+    font-weight: 700;
+    border: 1px solid var(--color-ui-gray-bg);
+}
+
+.base-dropdown__toggle>* {
+    cursor: pointer;
+}
+
+.base-button--appearance-extra:hover {
+    background-color: var(--color-gray-light-2);
+}
+.base-button:hover {
+    text-decoration: none;
+}
