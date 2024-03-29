@@ -5,22 +5,35 @@ import styles from './Questions.module.scss';
 import questions from "../../questions.js";
 
 export default function Questions() {
+    const [page, setPage] = useState(1); 
     const [filter, setFilter] = useState("all"); 
     const [filteredQuestions, setFilteredQuestions] = useState([]);
 
     useEffect(() => {
-        const filtered = questions.filter(question => {
+        let filtered = questions.filter(question => {
             if (filter === "all") {
                 return true;
             } else {
                 return question.tags.includes(filter);
             }
         });
+
+        // пагинация
+        filtered = filtered.slice((page-1) * 10, page * 10);
+
         setFilteredQuestions(filtered);
-    }, [filter]);
+    }, [filter, page]);
 
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
+    };
+
+    const decPage = (e) => {
+        setPage(page-1);
+    };
+
+    const incPage = (e) => {
+        setPage(page+1);
     };
 
     return (
@@ -47,7 +60,7 @@ export default function Questions() {
                             <div className={styles.accord}>
                                 <div className={styles.question}>
                                     <div className={styles.large}>
-                                        <span>{index+1}. {question.text}</span>
+                                        <span>{((page-1) * 10) + index+1}. {question.text}</span>
                                     </div>
 
                                     <div className={styles.tags}>
@@ -64,6 +77,11 @@ export default function Questions() {
                         </div>
                     </div>;
                 })}
+            </div>
+            <div>
+                <button onClick={decPage}>Назад</button>
+                Текущая страница {page}
+                <button onClick={incPage}>Вперед</button>
             </div>
         </div>
     );
