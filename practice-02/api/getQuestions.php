@@ -1,5 +1,7 @@
 <?php
-include '../questions.php';
 
-header('Content-Type: application/json; charset=utf-8');
-echo json_encode($questions);
+include '../services/QuestionsService.php';
+
+$service = new QuestionsService();
+$questions = $service->getQuestions();
+$service->renderResult($questions);

@@ -153,9 +153,6 @@ const questions = [
     {
         "text": "Опишите стратегию ветвления GitFlow",
     },
-    {
-        "text": "Какие есть способы слияния веток (default, squash, rebase)",
-    },
     // Database
     // Очень просто - https://habr.com/ru/articles/555760/
     {
@@ -166,12 +163,15 @@ const questions = [
     {
         "text": "Базовый синтаксис PHP, как объявить переменную, функцию, класс и объект",
     },
+    {
+        "text": "Что такое сессия в PHP, как хранится",
+    },
 ];
 
 function fillQuestions() {
-    const parent = document.querySelector('.js-questions');
+    const container = document.querySelector('.js-questions');
     
-    if (parent === undefined) {
+    if (container === undefined) {
         console.error('Ошибка! Не смогли найти элемент .js-questions на странице.');
         return;
     }
@@ -179,14 +179,14 @@ function fillQuestions() {
     questions.map((question) => {
         const node = document.createElement('li');
         node.textContent = question.text;
-        parent.appendChild(node);
+        container.appendChild(node);
     });
 }
 
 function generateRandom(count, clear) {
-    const parent = document.querySelector('.js-random-questions');
+    const container = document.querySelector('.js-random-questions');
     
-    if (parent === undefined) {
+    if (container === undefined) {
         console.error('Ошибка! Не смогли найти элемент .js-random-questions на странице.');
         return;
     }
@@ -201,7 +201,7 @@ function generateRandom(count, clear) {
         .map((question) => {
             const node = document.createElement('li');
             node.textContent = question.text;
-            parent.appendChild(node);
+            container.appendChild(node);
         });
 
     window.scrollTo(0, document.body.scrollHeight);
