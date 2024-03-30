@@ -161,40 +161,10 @@ const questions = [
     {
         "text": "Для чего нужны базы данных, примеры популярных",
     },
-    {
-        "text": "Какие есть типы связей в базе данных, пример для каждого",
-    },
-    {
-        "text": "Что такое ключи, какие бывают, как использовать",
-    },
-    {
-        "text": "Что такое индексы, опишите структуру данных (btree)",
-    },
-    {
-        "text": "Что такое индексы, опишите структуру данных (btree)",
-    },
-    {
-        "text": "Что такое транзакции, расшифруйте ACID",
-    },
-    {
-        "text": "Что такое миграции и для чего они нужны",
-    },
-    {
-        "text": "Какие четыре основных типа JOIN в SQL",
-    },
-    {
-        "text": "В чём разница между DELETE и TRUNCATE",
-    },
-    {
-        "text": "В чём разница между WHERE и HAVING",
-    },
     // PHP
     // Побольше вопросов - https://github.com/ivan-isaev21/250-questions-PHP/blob/master/Junior/README.MD
     {
         "text": "Базовый синтаксис PHP, как объявить переменную, функцию, класс и объект",
-    },
-    {
-        "text": "Что такое менеджер зависимостей, как работает composer",
     },
 ];
 
@@ -207,14 +177,52 @@ function fillQuestions() {
     }
 
     questions.map((question) => {
-        const node = document.createElement("li");
+        const node = document.createElement('li');
         node.textContent = question.text;
         parent.appendChild(node);
     });
 }
 
+function generateRandom(count, clear) {
+    const parent = document.querySelector('.js-random-questions');
+    
+    if (parent === undefined) {
+        console.error('Ошибка! Не смогли найти элемент .js-random-questions на странице.');
+        return;
+    }
+
+    if (clear) {
+        parent.innerHTML = '';
+    }
+
+    questions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, count)
+        .map((question) => {
+            const node = document.createElement('li');
+            node.textContent = question.text;
+            parent.appendChild(node);
+        });
+
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function listenButtons() {
+    const buttonAll = document.querySelector('.js-generate-random');
+    const buttonOne = document.querySelector('.js-generate-random-one');
+    
+    if (buttonAll === undefined || buttonOne === undefined) {
+        console.error('Ошибка! Не смогли найти элементы .js-generate-random на странице.');
+        return;
+    }
+
+    buttonAll.addEventListener('click', () => generateRandom(5, true));
+    buttonOne.addEventListener('click', () => generateRandom(1));
+}
+
 function startApp() {
     fillQuestions();
+    listenButtons();
 }
 
 document.addEventListener('DOMContentLoaded', startApp);
