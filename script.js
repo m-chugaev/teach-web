@@ -192,7 +192,7 @@ function generateRandom(count, clear) {
     }
 
     if (clear) {
-        parent.innerHTML = '';
+        container.innerHTML = '';
     }
 
     questions
