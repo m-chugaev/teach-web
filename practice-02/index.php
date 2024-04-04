@@ -27,6 +27,7 @@
                 showCloseButton: false,
                 status: 'info',
             })
+            console.log('beb')
         }
     </script>
 </body>
