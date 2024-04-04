@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,24 +8,43 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
     <title>WEB Development</title>
     <script>
-        const API_BASE_URL = '/practice-02/api/';
+        const API_BASE_URL = '/api/';
     </script>
+    <style>
+        #questionOfDay {
+            margin-left: 10px; 
+        }
+        .question-heading {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body class="responsive-padding">
     <?php include './components/questions/index.php'; ?>
     <?php include './components/simpleRandom/index.php'; ?>
 
+    <h2>Вопрос дня:</h2>
+    <div id="questionOfDay"></div>
+
     <script>
-        function showNotice(title, text = '') {
-            new Notify({
-                title: title,
-                text: text,
-                showIcon: false,
-                autotimeout: 1000,
-                showCloseButton: false,
-                status: 'info',
-            })
+
+        function getQuestionOfDay() {
+            return fetch('/getQuestionOfDay.php')
+                .then((response) => {
+                    return response.json();
+                });
         }
+
+        function displayQuestionOfDay() {
+            const questionOfDayContainer = document.getElementById("questionOfDay");
+
+            getQuestionOfDay()
+                .then((question) => {
+                    questionOfDayContainer.innerText = question;
+                });
+        }
+
+        window.onload = displayQuestionOfDay;
     </script>
 </body>
 </html>

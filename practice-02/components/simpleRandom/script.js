@@ -3,7 +3,7 @@
         return fetch(API_BASE_URL + 'getSimpleRandomQuestions.php')
             .then((response) => {
                 return response.json();
-            })
+            });
     }
 
     function fillRandomQuestions() {
@@ -22,7 +22,33 @@
                     node.textContent = question;
                     container.appendChild(node);
                 });
-            })
+            });
+    }
+
+    function getQuestionOfDay() {
+        return fetch('/getQuestionOfDay.php')
+            .then((response) => {
+                return response.json();
+            });
+    }
+
+    function fillQuestionOfDay() {
+        const container = document.querySelector('.js-simple-random-questions');
+    
+        if (container === undefined) {
+            console.error('Ошибка! Не смогли найти элемент .js-simple-random-questions на странице.');
+            return;
+        }
+    
+        getQuestionOfDay()
+            .then((question) => {
+                container.innerHTML = '';
+                const node = document.createElement("li");
+                node.textContent = question;
+                // Добавляем класс "question-of-the-day" к элементу списка
+                node.classList.add("question-of-the-day");
+                container.appendChild(node);
+            });
     }
 
     function showHistory() {
@@ -32,7 +58,7 @@
             })
             .then((text) => {
                 showNotice('История', text);
-            })
+            });
     }
 
     function listenButtons() {
@@ -49,4 +75,4 @@
     }
 
     listenButtons();
-}())
+}());
