@@ -1,3 +1,4 @@
+import questions from "../../questions.js";
 (function () {
     let currentPage = 1;
     const pageSize = 10;
@@ -28,7 +29,41 @@
             updatePaginationControls(data.totalQuestions);
         });
     }
-
+    
+    function questionsPage() {
+        const [filteredQuestions, setFilteredQuestions] = useState(questions);
+    
+        function filterByTag(tag) {
+            if (tag === 'Basics') {
+                setFilteredQuestions(questions);
+            } else {
+                const filteredQuestions = questions.filter(question => question.tags.includes(tag));
+                setFilteredQuestions(filteredQuestions);
+            }
+        }
+    
+        return (
+            <div>
+                <div id="filter">
+                    <button onClick={() => filterByTag('Basics')}>Basics</button>
+                    <button onClick={() => filterByTag('JS')}>JS</button>
+                    <button onClick={() => filterByTag('CSS')}>CSS</button>
+                    <button onClick={() => filterByTag('OOP')}>OOP</button>
+                    <button onClick={() => filterByTag('Git')}>Git</button>
+                    <button onClick={() => filterByTag('Database')}>Database</button>
+                    <button onClick={() => filterByTag('PHP')}>PHP</button>
+                </div>
+                <div id="questions">
+                    {filteredQuestions.map((question, index) => (
+                        <div key={index}>
+                            <p>{question.text}</p>
+                            <p>Tags: {question.tags.map((tag, index) => <mark key={index}>{tag}</mark>)}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
     function navigate(page) {
         currentPage = page;
         updateURL(page);
