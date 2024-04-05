@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,41 +12,22 @@
     <script>
         const API_BASE_URL = '/practice-02/api/';
     </script>
-    <style>
-        #questionOfDay {
-            margin-left: 10px;  
-        }
-        .question-heading {
-            margin-right: 5px;
-        }
-    </style>
 </head>
 <body class="responsive-padding">
     <?php include './components/questions/index.php'; ?>
     <?php include './components/simpleRandom/index.php'; ?>
-
-    <h2>Вопрос дня:</h2>
-    <div id="questionOfDay"></div>
-
+    <?php include './components/questionsOfDay/index.php'; ?>
     <script>
-
-        function getQuestionOfDay() {
-            return fetch('/practice-02/services/getQuestionOfDay.php')
-                .then((response) => {
-                    return response.json();
-                });
+        function showNotice(title, text = '') {
+            new Notify({
+                title: title,
+                text: text,
+                showIcon: false,
+                autotimeout: 1000,
+                showCloseButton: false,
+                status: 'info',
+            })
         }
-
-        function displayQuestionOfDay() {
-            const questionOfDayContainer = document.getElementById("questionOfDay");
-
-            getQuestionOfDay()
-                .then((question) => {
-                    questionOfDayContainer.innerText = question;
-                });
-        }
-
-        window.onload = displayQuestionOfDay;
     </script>
 </body>
 </html>
