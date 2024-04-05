@@ -10,3 +10,13 @@ ym(96943535, "init", {
      accurateTrackBounce:true,
      webvisor:true
 });
+
+// Клик по кнопке 'Сгенерировать 5'
+document.querySelector('.js-generate-random').addEventListener('click', function() {
+    ym(96943535, 'reachGoal', 'generate_random_5');
+});
+
+// Клик по кнопке 'Сгенерировать ещё 1'
+document.querySelector('.js-generate-random-one').addEventListener('click', function() {
+    ym(96943535, 'reachGoal', 'generate_random_one');
+});

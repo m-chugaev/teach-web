@@ -8,6 +8,9 @@ import RandomQuestionsFrequency from '../components/RandomQuestionsFrequency';
 import Comment from '../components/Comment/Comment';
 import SwitchTheme from "../components/SwitchTheme";
 import Random5Questions from "@/components/Top5dieFive";
+import Script from 'next/script';
+import '../components/yandex-metrika';
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -27,6 +30,8 @@ export default function Home() {
         title="Сделано на Next.js"
       />
       <Comment />
+      <Script src="/components/yandex-metrika.js" strategy="beforeInteractive" />
     </main>
   );
 }
+
