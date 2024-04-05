@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
     <title>WEB Development</title>
     <script>
-        const API_BASE_URL = '/practice-02/api/';
+        const API_BASE_URL = '/api/';
     </script>
 </head>
 <body class="responsive-padding">
