@@ -1,25 +1,16 @@
 <?php
 
-include '../services/QuestionsService.php';
+include '../services/QuestionsByIdsService.php';
 
-$idsParam = isset($_GET['ids']) ? $_GET['ids'] : '';
+$service = new QuestionsByIdsService();
 
-$service = new QuestionsService();
+$validate = $service->validateQuery($_GET);
 
-if (empty($idsParam)) {
-    $service->renderResult(['error' => 'Идентификаторы не найдены']);
+if (isset($validate['error'])) {
+    $service->renderResult($validate);
     exit;
 }
 
-$ids = array_map('intval', explode(',', $idsParam));
-
-foreach ($ids as $id) {
-    if ($id <= 0) {
-        $service->renderResult(['error' => 'Идентификаторы должны быть положительными числами']);
-        exit;
-    }
-}
-
-$result = $service->getQuestionsByIds($ids);
+$result = $service->getQuestionsByIds($validate['ids']);
 
 $service->renderResult($result);
