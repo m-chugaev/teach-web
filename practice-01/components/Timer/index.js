@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export default function Timer() {
-  const [time, setTime] = useState(3);
+  const [time, setTime] = useState(300);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Timer() {
   };
 
   return (
-    <div style={{ position: 'fixed', right: '3%', top: '50%', transform: 'translate(50%, -50%)' }}>
+    <div style={{ position: 'fixed', right: '3%', top: '50%', transform: 'translate(50%, -50%)', background: 'white', padding: '10px' }}>
       <h2>{Math.floor(time / 60)}:{(time % 60).toString().padStart(2, '0')}</h2>
       <button onClick={handleToggle}>{isRunning ? '⛔️' : '▶️'}</button>
       <button onClick={resetTime}>🔄</button>
