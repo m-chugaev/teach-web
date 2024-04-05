@@ -14,7 +14,7 @@ const QuestionOfTheDay = () => {
             const storedDateTime = new Date(storedDate).getTime();
             const currentDateTime = new Date().getTime();
             
-            if (currentDateTime - storedDateTime > 1000) {
+            if (currentDateTime - storedDateTime > (1000 * 60 * 60 * 24)) {
                 const newIndex = (parseInt(storedIndex) + 1) % questions.length;
                 setCurrentQuestionIndex(newIndex);
                 setCurrentQuestion(questions[newIndex]?.text || '');
