@@ -27,5 +27,7 @@
     <?php include './components/questions/index.php'; ?>
     <?php include './components/simpleRandom/index.php'; ?>
     <?php include './components/questionsByIds/index.php'; ?>
+    <?php include './components/questionsOfDay/index.php'; ?>
+    <?php include './components/randomQuestionNotice/index.php'; ?>
 </body>
 </html>
