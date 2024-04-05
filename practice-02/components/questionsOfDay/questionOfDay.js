@@ -1,4 +1,4 @@
-// Функция для получения вопроса дня с сервера
+
 function getQuestionOfDay() {
     return fetch('/practice-02/services/getQuestionOfDay.php')
         .then((response) => {
@@ -6,7 +6,6 @@ function getQuestionOfDay() {
         });
 }
 
-// Функция для заполнения вопроса дня на странице
 function fillQuestionOfDay() {
     const container = document.getElementById("questionOfDay");
 
@@ -24,5 +23,4 @@ function fillQuestionOfDay() {
         });
 }
 
-// Вызов функции fillQuestionOfDay при загрузке страницы
 window.onload = fillQuestionOfDay;
