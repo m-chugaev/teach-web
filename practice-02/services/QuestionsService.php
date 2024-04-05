@@ -175,4 +175,25 @@ class QuestionsService
             return $el['text'];
         }, $all);
     }
+
+    public function getQuestionsByIds(array $ids): array
+    {
+        $questions = [];
+        $missingIds = [];
+
+        foreach ($ids as $id) {
+            $index = $id - 1;
+
+            if (isset(self::QUESTIONS[$index])) {
+                $questions[] = self::QUESTIONS[$index];
+            } else {
+                $missingIds[] = $id;
+            }
+        }
+
+        return [
+            'questions' => $questions,
+            'missing_ids' => $missingIds,
+        ];
+    }
 }
