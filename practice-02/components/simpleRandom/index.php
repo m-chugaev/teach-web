@@ -7,5 +7,5 @@
         <button class="js-simple-random-history">Показать историю</button>
     </div>
 
-    <script src="/components/simpleRandom/script.js"></script>
+    <script src="/practice-02/components/simpleRandom/script.js"></script>
 </div>

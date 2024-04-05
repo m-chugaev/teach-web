@@ -10,5 +10,5 @@
         </form>
     </div>
 
-    <script src="/components/questionsByIds/script.js"></script>
+    <script src="/practice-02/components/questionsByIds/script.js"></script>
 </div>

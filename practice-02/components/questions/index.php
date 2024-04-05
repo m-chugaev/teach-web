@@ -3,5 +3,5 @@
 
     <ol class="js-questions"></ol>
 
-    <script src="/components/questions/script.js"></script>
+    <script src="/practice-02/components/questions/script.js"></script>
 </div>
