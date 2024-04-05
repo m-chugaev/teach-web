@@ -3,7 +3,7 @@
         return fetch(API_BASE_URL + 'getSimpleRandomQuestions.php')
             .then((response) => {
                 return response.json();
-            })
+            });
     }
 
     function fillRandomQuestions() {
@@ -22,17 +22,17 @@
                     node.textContent = question;
                     container.appendChild(node);
                 });
-            })
+            });
     }
 
     function showHistory() {
         fetch(API_BASE_URL + 'getSimpleRandomQuestionsHistory.php')
             .then((response) => {
-                return response.text();
+                return response.text(); 
             })
             .then((text) => {
                 showNotice('История', text);
-            })
+            });
     }
 
     function listenButtons() {
@@ -49,4 +49,4 @@
     }
 
     listenButtons();
-}())
+}());
