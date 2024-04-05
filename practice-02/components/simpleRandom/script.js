@@ -25,36 +25,10 @@
             });
     }
 
-    function getQuestionOfDay() {
-        return fetch('/getQuestionOfDay.php')
-            .then((response) => {
-                return response.json();
-            });
-    }
-
-    function fillQuestionOfDay() {
-        const container = document.querySelector('.js-simple-random-questions');
-    
-        if (container === undefined) {
-            console.error('Ошибка! Не смогли найти элемент .js-simple-random-questions на странице.');
-            return;
-        }
-    
-        getQuestionOfDay()
-            .then((question) => {
-                container.innerHTML = '';
-                const node = document.createElement("li");
-                node.textContent = question;
-                // Добавляем класс "question-of-the-day" к элементу списка
-                node.classList.add("question-of-the-day");
-                container.appendChild(node);
-            });
-    }
-
     function showHistory() {
         fetch(API_BASE_URL + 'getSimpleRandomQuestionsHistory.php')
             .then((response) => {
-                return response.text();
+                return response.text(); 
             })
             .then((text) => {
                 showNotice('История', text);

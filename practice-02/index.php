@@ -8,11 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
     <title>WEB Development</title>
     <script>
-        const API_BASE_URL = '/api/';
+        const API_BASE_URL = '/practice-02/api/';
     </script>
     <style>
         #questionOfDay {
-            margin-left: 10px; 
+            margin-left: 10px;  
         }
         .question-heading {
             margin-right: 5px;
@@ -29,7 +29,7 @@
     <script>
 
         function getQuestionOfDay() {
-            return fetch('/getQuestionOfDay.php')
+            return fetch('/practice-02/services/getQuestionOfDay.php')
                 .then((response) => {
                     return response.json();
                 });
