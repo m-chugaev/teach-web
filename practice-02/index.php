@@ -26,5 +26,19 @@
 <body class="responsive-padding">
     <?php include './components/questions/index.php'; ?>
     <?php include './components/simpleRandom/index.php'; ?>
+    <?php include './components/randomQuestionNotice/index.php'; ?>
+
+<script>
+    function showNotice(title, text = '') {
+        new Notify({
+            title: title,
+            text: text,
+            showIcon: false,
+            autotimeout: 1000,
+            showCloseButton: false,
+            status: 'info',
+        })
+    }
+</script>
 </body>
 </html>
