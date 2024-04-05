@@ -1,50 +1,45 @@
-let timer;
-let minutes = 5;
-let seconds = 0;
-let isTimerRunning = false;
+'use client';
 
-function startTimer() {
-  if (!isTimerRunning) {
-    isTimerRunning = true;
-    timer = setInterval(updateTimer, 1000);
-  }
-}
+import { useEffect, useState } from 'react';
 
-function stopTimer() {
-  clearInterval(timer);
-  isTimerRunning = false;
-}
+export default function Timer() {
+  const [time, setTime] = useState(3);
+  const [isRunning, setIsRunning] = useState(false);
 
-function resetTimer() {
-  clearInterval(timer);
-  isTimerRunning = false;
-  minutes = 5;
-  seconds = 0;
-  document.getElementById("timer").innerText = "5:00";
-}
+  useEffect(() => {
+    if (isRunning) {
+      const timer = setInterval(() => {
+        setTime(prevTime => prevTime - 1);
+      }, 1000);
 
-function updateTimer() {
-  if (minutes === 0 && seconds === 0) {
-    clearInterval(timer);
-    isTimerRunning = false;
-    alert("Таймер закончился");
-    if (confirm("Сбросить таймер к 5 минутам?")) {
-      resetTimer();
+      return () => clearInterval(timer);
     }
-  } else {
-    if (seconds === 0) {
-      minutes--;
-      seconds = 59;
-    } else {
-      seconds--;
-    }
-    document.getElementById("timer").innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-  }
-}
+  }, [isRunning]);
 
-/*
-<div id="timer">5:00</div>
-<button onclick="startTimer()">Start</button>
-<button onclick="stopTimer()">Stop</button>
-<button onclick="resetTimer()">Reset</button>
-*/
+  useEffect(() => {
+    if (time === 0) {
+      alert('Таймер закончился');
+      const resetTimer = window.confirm('Хотите сбросить таймер к 5 минутам?');
+      if (resetTimer) {
+        setTime(300);
+        setIsRunning(false);
+      }
+    }
+  }, [time]);
+
+  const handleToggle = () => {
+    setIsRunning(prevIsRunning => !prevIsRunning);
+  };
+  const resetTime = () => {
+    setTime(300);
+    setIsRunning(false);
+  };
+
+  return (
+    <div style={{ position: 'fixed', right: '3%', top: '50%', transform: 'translate(50%, -50%)' }}>
+      <h2>{Math.floor(time / 60)}:{(time % 60).toString().padStart(2, '0')}</h2>
+      <button onClick={handleToggle}>{isRunning ? '⛔️' : '▶️'}</button>
+      <button onClick={resetTime}>🔄</button>
+    </div>
+  );
+};
