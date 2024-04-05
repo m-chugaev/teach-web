@@ -66,4 +66,27 @@
         }
         fillQuestions();
     });
+
+    document.getElementById('addQuestionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const newQuestion = document.getElementById('newQuestion').value;
+        
+        fetch('/practice-02/api/add_question.php', {
+            method: 'POST',
+            body: new URLSearchParams({ newQuestion })
+        })
+        .then(response => {
+            if (response.ok) {
+                showNotice('Вопрос добавлен');
+            } else {
+                throw new Error('Ошибка при добавлении вопроса');
+            }
+        })
+        .catch(error => {
+            showNotice('Ошибка', error.message);
+        });
+    });
+    
+    
 }());

@@ -164,7 +164,12 @@ class QuestionsService
 
     public function getQuestions(): array
     {
-        return self::QUESTIONS;
+        $questions = self::QUESTIONS;
+
+        // добавить в переменную новые вопросы
+
+
+        return $questions;
     }
 
     public function getQuestionsText(): array
