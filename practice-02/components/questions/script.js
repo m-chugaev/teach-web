@@ -15,9 +15,9 @@
 
     function fillQuestions() {
         const container = document.querySelector('.js-questions');
-        container.innerHTML = ''; 
 
         getQuestions().then(data => {
+            container.innerHTML = '';
             const questions = data.questions;
             questions.forEach((question, index) => {
                 const questionNode = document.createElement('li');
