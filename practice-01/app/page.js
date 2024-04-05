@@ -9,6 +9,7 @@ import Comment from '../components/Comment/Comment';
 import SwitchTheme from "../components/SwitchTheme";
 import Random5Questions from "@/components/Top5dieFive";
 import QuestionOfTheDay from "@/components/QuestionOfTheDay";
+import Timer from "@/components/Timer"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <JokeNotice />
       <SwitchTheme />
       <Random5Questions />
+      <Timer />
       <Image
         className={styles.icon}
         src="/icons/next.svg"
