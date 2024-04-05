@@ -1,6 +1,6 @@
 
 function getQuestionOfDay() {
-    return fetch('/practice-02/services/getQuestionOfDay.php')
+    return fetch('/practice-02/api/getQuestionOfDay.php')
         .then((response) => {
             return response.json();
         });

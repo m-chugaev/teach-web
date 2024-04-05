@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-
 include_once 'QuestionsService.php';
 
 class QuestionOfDayService
 {
-    public static function getQuestionOfDay()
+    use RenderResultTrait;
+
+    public function getQuestionOfDay()
     {
         if (!isset($_SESSION['shown_questions'])) {
             $_SESSION['shown_questions'] = array();
@@ -37,6 +38,4 @@ class QuestionOfDayService
         return $question_of_day;
     }
 }
-
-echo json_encode(QuestionOfDayService::getQuestionOfDay());
 ?>
