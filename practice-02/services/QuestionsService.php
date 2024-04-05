@@ -175,4 +175,15 @@ class QuestionsService
             return $el['text'];
         }, $all);
     }
+
+    public function getPaginatedQuestions(int $page, int $pageSize): array
+    {
+        $allQuestions = $this->getQuestions();
+        $questions = array_slice($allQuestions, ($page - 1) * $pageSize, $pageSize);
+
+        return [
+            'questions' => $questions,
+            'totalQuestions' => count($allQuestions),
+        ];
+    }
 }
