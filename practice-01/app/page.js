@@ -8,10 +8,13 @@ import RandomQuestionsFrequency from '../components/RandomQuestionsFrequency';
 import Comment from '../components/Comment/Comment';
 import SwitchTheme from "../components/SwitchTheme";
 import Random5Questions from "@/components/Top5dieFive";
+import QuestionOfTheDay from "@/components/QuestionOfTheDay";
+
 export default function Home() {
   return (
     <main className={styles.main}>
       <Questions />
+      <QuestionOfTheDay />
       <RandomQuestions />
       <RandomQuestionsList />
       <RandomQuestionsFrequency />
