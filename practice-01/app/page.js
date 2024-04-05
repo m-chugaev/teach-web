@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import Questions from '../components/Questions';
 import RandomQuestionsList from '../components/RandomQuestionsList';
 import JokeNotice from '../components/JokeNotice';
+import QuestionNotice from '../components/QuestionNotice';
 import RandomQuestions from '../components/RandomQuestions';
 import RandomQuestionsFrequency from '../components/RandomQuestionsFrequency';
 import Comment from '../components/Comment/Comment';
@@ -19,6 +20,7 @@ export default function Home() {
       <RandomQuestionsList />
       <RandomQuestionsFrequency />
       <JokeNotice />
+      <QuestionNotice />
       <SwitchTheme />
       <Random5Questions />
       <Image
