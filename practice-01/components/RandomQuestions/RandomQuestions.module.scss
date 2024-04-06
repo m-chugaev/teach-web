@@ -1,0 +1,52 @@
+.container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 800px; /* Увеличение максимальной ширины контейнера */
+    margin: 20px auto 0;
+}
+
+.wrapper {
+    margin-bottom: 20px; /* Отступ снизу блока wrapper */
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px; /* Отступ сверху блока result */
+}
+
+.result h3 {
+    margin-bottom: 10px; /* Отступ снизу заголовка */
+}
+
+.result ol {
+    padding-left: 20px;
+}
