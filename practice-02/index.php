@@ -16,6 +16,7 @@
 <body class="responsive-padding">
     <?php include './components/questions/index.php'; ?>
     <?php include './components/simpleRandom/index.php'; ?>
+    <?php include './components/TextValidator/index.php'; ?>
 
     <script>
         function showNotice(title, text = '') {
