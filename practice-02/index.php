@@ -14,8 +14,9 @@
     </script>
 </head>
 <body class="responsive-padding">
-    <?php include './components/questions/index.php'; ?>
-    <?php include './components/simpleRandom/index.php'; ?>
+<?php include 'components/questions/index.php'; ?>
+<?php include 'components/3checkbox/index.php'; ?>
+<?php include 'components/simpleRandom/index.php'; ?>
 
     <script>
         function showNotice(title, text = '') {
