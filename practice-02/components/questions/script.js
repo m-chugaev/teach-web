@@ -72,7 +72,7 @@
         
         const newQuestion = document.getElementById('newQuestion').value;
         
-        fetch('/practice-02/api/add_question.php', {
+        fetch('/practice-02/api/addQuestion.php', {
             method: 'POST',
             body: new URLSearchParams({ newQuestion })
         })

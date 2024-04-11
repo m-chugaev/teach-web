@@ -165,11 +165,21 @@ class QuestionsService
     public function getQuestions(): array
     {
         $questions = self::QUESTIONS;
-
-        // добавить в переменную новые вопросы
-
-
+    
+        if (isset($_SESSION['questions'])) {
+            $questions = array_merge($questions, $_SESSION['questions']);
+        }
+    
         return $questions;
+    }
+
+    public function addQuestion(string $question): void
+    {
+        if (!isset($_SESSION['questions'])) {
+            $_SESSION['questions'] = [];
+        }
+    
+        $_SESSION['questions'][] = ['text' => $question];
     }
 
     public function getQuestionsText(): array
@@ -184,7 +194,19 @@ class QuestionsService
     public function getPaginatedQuestions(int $page, int $pageSize): array
     {
         $allQuestions = $this->getQuestions();
-        $questions = array_slice($allQuestions, ($page - 1) * $pageSize, $pageSize);
+        
+        if (empty($allQuestions)) {
+            return ['questions' => [], 'totalQuestions' => 0];
+        }
+
+        $newQuestions = $_SESSION['questions'] ?? [];
+        
+        $allQuestions = array_merge($newQuestions, $allQuestions);
+
+        $startIndex = ($page - 1) * $pageSize;
+        $endIndex = $startIndex + $pageSize;
+
+        $questions = array_slice($allQuestions, $startIndex, $pageSize);
 
         return [
             'questions' => $questions,

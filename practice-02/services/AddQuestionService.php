@@ -9,10 +9,7 @@ class AddQuestionService
 {
     use RenderResultTrait;
 
-    public function addQuestion(string $text): void
-    {
-        // сохраняем в сессию 
-    }
+   
     
     public function getAddQuestions(): array
     {
