@@ -4,6 +4,11 @@ import { useEffect, useState } from 'react';
 import styles from './Questions.module.scss';
 import questions from "../../questions.js";
 
+const getRandomEmoji = () => {
+    const emojis = ["😊", "🎉", "🤔", "👍", "😄", "🎨"];
+    return emojis[Math.floor(Math.random() * emojis.length)];
+};
+
 export default function Questions() {
     const [filter, setFilter] = useState("all"); 
     const [filteredQuestions, setFilteredQuestions] = useState([]);

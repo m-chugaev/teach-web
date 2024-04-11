@@ -1,16 +1,24 @@
 (function () {
     let currentPage = 1;
     const pageSize = 10;
-
+   
     function getQuestions(page = currentPage) {
-        const url = `${API_BASE_URL}getQuestions.php?page=${page}&pageSize=${pageSize}`;
-        return fetch(url)
-            .then(response => response.json());
+        const url = `getQuestions.php?page=${page}&pageSize=${pageSize}`;
+        return fetch(url).then(response => response.json());
     }
 
-    function updateURL(page) {  
-        const newURL = `${window.location.protocol}//${window.location.host}${window.location.pathname}?page=${page}`;
-        window.history.pushState({ path: newURL }, '', newURL);
+    function getRandomQuestions(n) {
+        return getQuestions().then(data => {
+            const allQuestions = data.questions;
+            const randomQuestions = [];
+            while (randomQuestions.length < n) {
+                const randomIndex = Math.floor(Math.random() * allQuestions.length);
+                if (!randomQuestions.includes(allQuestions[randomIndex])) {
+                    randomQuestions.push(allQuestions[randomIndex]);
+                }
+            }
+            return randomQuestions;
+        });
     }
 
     function fillQuestions() {
@@ -22,7 +30,6 @@
             questions.forEach((question, index) => {
                 const questionNode = document.createElement('li');
                 questionNode.textContent = question.text;
-
                 container.appendChild(questionNode);
             });
             updatePaginationControls(data.totalQuestions);
@@ -49,13 +56,30 @@
         const pageInfo = document.createElement('span');
         pageInfo.textContent = `Страница ${currentPage}`;
         paginationContainer.appendChild(pageInfo);
-        
+
         if (totalQuestions > currentPage * pageSize) {
             const nextButton = document.createElement('button');
             nextButton.textContent = 'Вперед';
             nextButton.addEventListener('click', () => navigate(currentPage + 1));
             paginationContainer.appendChild(nextButton);
         }
+    }
+   
+    function updateURL(page) {
+        const newURL = `${window.location.protocol}//${window.location.host}${window.location.pathname}?page=${page}`;
+        window.history.pushState({ path: newURL }, '', newURL);
+    }
+
+    function showRandomQuestions(n) {
+        getRandomQuestions(n).then(randomQuestions => {
+            const randomQuestionsContainer = document.querySelector('.js-random-questions');
+            randomQuestionsContainer.innerHTML = '';
+            randomQuestions.forEach(question => {
+                const questionNode = document.createElement('li');
+                questionNode.textContent = question.text;
+                randomQuestionsContainer.appendChild(questionNode);
+            });
+        });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -65,5 +89,15 @@
             currentPage = page;
         }
         fillQuestions();
+
+        const form = document.querySelector('.js-random-questions-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const input = document.querySelector('.js-random-questions-input');
+            const n = parseInt(input.value, 10);
+            if (n && n > 0) {
+                showRandomQuestions(n);
+            }
+        });
     });
 }());
