@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <title>WEB Development</title>
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -21,10 +21,25 @@
          accurateTrackBounce:true,
          webvisor:true
     });
+    // Кастомное событие "Клик по кнопке 'Сгенерировать 5'"
+document.querySelector('.js-generate-random').addEventListener('click', function() {
+    ym(96943535, 'reachGoal', 'generate_random_5');
+});
+
+// Кастомное событие "Клик по кнопке 'Сгенерировать ещё 1'"
+document.querySelector('.js-generate-random-one').addEventListener('click', function() {
+    ym(96943535, 'reachGoal', 'generate_random_one');
+});
+
+// Кастомное событие "Клик по кнопке переключения языка"
+document.querySelectorAll('.js-change-language').forEach(function(button) {
+    button.addEventListener('click', function() {
+        ym(96943535, 'reachGoal', 'change_language');
+    });
+});
  </script>
  <noscript><div><img src="https://mc.yandex.ru/watch/96943535" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
  <!-- /Yandex.Metrika counter -->
- 
 </head>
 <body class="responsive-padding">
     <h1>Вопросы для собеседования</h1>
