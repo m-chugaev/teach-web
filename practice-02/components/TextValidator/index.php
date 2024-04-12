@@ -8,5 +8,5 @@
 
     <div id="validationResult"></div>
 
-    <script src="/practice-02/components/TextValidatorComponent/script.js"></script>
+    <script src="/practice-02/components/TextValidator/script.js"></script>
 </div>

@@ -1,9 +1,8 @@
 <?php
-session_start();
 
 header('Content-Type: application/json');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['valid_chars'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $text = json_decode(file_get_contents('php://input'), true)['text'];
 
     $pattern = '/^[А-Яа-я\s]+$/u';

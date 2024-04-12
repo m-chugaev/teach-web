@@ -4,6 +4,7 @@
     const validationResult = document.getElementById('validationResult');
 
     form.addEventListener('submit', function (event) {
+        console.log('sdfsdfsfd');
         event.preventDefault();
 
         const text = textInput.value.trim();
