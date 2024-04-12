@@ -2,20 +2,19 @@
 // handle result
 
 (function (){
-    document.querySelector('form').addEventListener('submit', async (event) => {
+    const form = document.querySelector('.formEmail_js');
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
-    
-        const email = document.querySelector('inputname="email"').value;
     
         const response = await fetch(API_BASE_URL + 'checkEmail.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: email })
+            body: new FormData(form)
         });
     
         const result = await response.json();
         return result;
     });
-})
+})()

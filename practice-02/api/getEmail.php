@@ -6,5 +6,5 @@ include '../services/CheckEmailService.php';
 SessionManager::safeStart();
 
 $service = new CheckEmailService();
-$history = $service->getRequestsHistory();
+$history = $service->getLatest();
 $service->renderResult($history);

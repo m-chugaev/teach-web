@@ -8,25 +8,29 @@ class CheckEmailService
 
     private const SESSION_KEY = 'email';
 
-    public function checkEmail()
+    private string $email;
+
+    public function __construct(string $email = '') {
+        $this->email = $email;
+    }
+
+    public function checkEmail(): string
     {
-        $email = 'email';
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             return "Контакт сохранен"; 
         } else {
             return "Ошибка валидации email";
         }
     }
-    public function getRequestsHistory(): string
+
+    public function getLatest(): string
     {
         return $_SESSION[self::SESSION_KEY] ?? "";
     }
 
-    public function saveRequest(): void
+    public function save(): void
     {
-        $current = $this->getRequestsHistory();
-        $current = "";
-        $_SESSION[self::SESSION_KEY] = $current;
+        $_SESSION[self::SESSION_KEY] = $this->email;
     }
 }
 ?>

@@ -10,7 +10,7 @@ include '../services/SessionManager.php';
 
 
 SessionManager::safeStart();
-$service = new CheckEmailService();
-$service->saveRequest();
+$service = new CheckEmailService($_POST['email'] ?? '');
+$service->save();
 $check = $service->checkEmail(); // Здесь возвращаем итог строчку
 $service->renderResult($check); // Сюда передаём итог строчку
