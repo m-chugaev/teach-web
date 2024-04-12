@@ -6,15 +6,11 @@
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
     
-        const response = await fetch(API_BASE_URL + 'checkEmail.php', {
+        fetch(API_BASE_URL + 'checkEmail.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: new FormData(form)
-        });
-    
-        const result = await response.json();
-        return result;
+            body: (new FormData(form))
+        })
+            .then((response) => response.json())
+            .then((text) => showNotice(text))
     });
 })()
