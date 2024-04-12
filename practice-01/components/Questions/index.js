@@ -4,17 +4,12 @@ import { useEffect, useState } from 'react';
 import styles from './Questions.module.scss';
 import questions from "../../questions.js";
 
-const getRandomEmoji = () => {
-    const emojis = ["😊", "🎉", "🤔", "👍", "😄", "🎨"];
-    return emojis[Math.floor(Math.random() * emojis.length)];
-};
-
 export default function Questions() {
     const [filter, setFilter] = useState("all"); 
     const [filteredQuestions, setFilteredQuestions] = useState([]);
 
     useEffect(() => {
-        const filtered = questions.filter(question => {
+        const filtered = getQuestionsWithSmiles().filter(question => {
             if (filter === "all") {
                 return true;
             } else {
@@ -26,6 +21,19 @@ export default function Questions() {
 
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
+    };
+
+    const getQuestionsWithSmiles = () => {
+        return questions.map((el) => {
+            const elCopy = Object.assign({}, el)
+            elCopy.text = el.text + " " + getRandomEmoji();
+            return elCopy;
+        });
+    }
+ 
+    const getRandomEmoji = () => {
+        const emojis = ["😊", "🎉", "🤔", "👍", "😄", "🎨"];
+        return emojis[Math.floor(Math.random() * emojis.length)];
     };
 
     return (
