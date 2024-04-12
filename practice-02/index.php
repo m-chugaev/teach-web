@@ -30,4 +30,5 @@
     <?php include './components/questionsOfDay/index.php'; ?>
     <?php include './components/randomQuestionNotice/index.php'; ?>
 </body>
+
 </html>

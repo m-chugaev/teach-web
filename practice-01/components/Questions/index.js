@@ -9,7 +9,7 @@ export default function Questions() {
     const [filteredQuestions, setFilteredQuestions] = useState([]);
 
     useEffect(() => {
-        const filtered = questions.filter(question => {
+        const filtered = getQuestionsWithSmiles().filter(question => {
             if (filter === "all") {
                 return true;
             } else {
@@ -21,6 +21,19 @@ export default function Questions() {
 
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
+    };
+
+    const getQuestionsWithSmiles = () => {
+        return questions.map((el) => {
+            const elCopy = Object.assign({}, el)
+            elCopy.text = el.text + " " + getRandomEmoji();
+            return elCopy;
+        });
+    }
+ 
+    const getRandomEmoji = () => {
+        const emojis = ["😊", "🎉", "🤔", "👍", "😄", "🎨"];
+        return emojis[Math.floor(Math.random() * emojis.length)];
     };
 
     return (
