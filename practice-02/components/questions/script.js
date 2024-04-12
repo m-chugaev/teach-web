@@ -79,6 +79,7 @@
         .then(response => {
             if (response.ok) {
                 showNotice('Вопрос добавлен');
+                fillQuestions();
             } else {
                 throw new Error('Ошибка при добавлении вопроса');
             }
