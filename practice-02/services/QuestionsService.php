@@ -1,7 +1,7 @@
 <?php
 
 include_once 'RenderResultTrait.php';
-
+include_once 'RandomSmileService.php';
 /**
  * Сервис для получения общего списка вопросов
  */
@@ -164,7 +164,12 @@ class QuestionsService
 
     public function getQuestions(): array
     {
-        return self::QUESTIONS;
+        $randomSmileService = new RandomSmileService();
+        
+        return array_map(function($item) use ($randomSmileService) {
+            $item['smile'] = $randomSmileService->getSmile();
+            return $item;
+        }, self::QUESTIONS);
     }
 
     public function getQuestionsText(): array
