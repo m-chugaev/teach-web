@@ -2,22 +2,21 @@
 
 import { useEffect, useState } from 'react';
 import styles from './Questions.module.scss';
+import questions from "../../questions.js";
 
 export default function Questions() {
     const [filter, setFilter] = useState("all"); 
-    const [questions, setQuestions] = useState([]);
+    const [newQuestions, setNewQuestions] = useState([]);
     const [filteredQuestions, setFilteredQuestions] = useState([]);
     const [newQuestion, setNewQuestion] = useState("");
 
     useEffect(() => {
         const storedQuestions = JSON.parse(localStorage.getItem('questions')) || [];
-        setQuestions(storedQuestions);
-        setFilteredQuestions(storedQuestions);
-
+        setNewQuestions(storedQuestions);
     }, []);
 
     useEffect(() => {
-        const filtered = questions.filter(question => {
+        const filtered = getAllQuestions().filter(question => {
             if (filter === "all") {
                 return true;
             } else {
@@ -25,7 +24,11 @@ export default function Questions() {
             }
         });
         setFilteredQuestions(filtered);
-    }, [filter, questions]);
+    }, [filter, newQuestions]);
+
+    const getAllQuestions = (e) => {
+        return [...questions, ...newQuestions];
+    };
 
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
@@ -39,12 +42,12 @@ export default function Questions() {
         e.preventDefault();
         if (newQuestion.trim() !== "") {
             const updatedQuestions = [
-                ...questions,
+                ...newQuestions,
                 { text: newQuestion, tags: ["New"] }
             ];
             localStorage.setItem('questions', JSON.stringify(updatedQuestions));
             setNewQuestion("");
-            setQuestions(updatedQuestions);
+            setNewQuestions(updatedQuestions);
         }
     };
 
