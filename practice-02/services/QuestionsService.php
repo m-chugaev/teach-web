@@ -1,7 +1,7 @@
 <?php
 
 include_once 'RenderResultTrait.php';
-
+include_once 'RandomSmileService.php';
 /**
  * Сервис для получения общего списка вопросов
  */
@@ -164,7 +164,27 @@ class QuestionsService
 
     public function getQuestions(): array
     {
-        return self::QUESTIONS;
+        $questions = self::QUESTIONS;
+    
+        if (isset($_SESSION['questions'])) {
+            $questions = array_merge($_SESSION['questions'], $questions);
+        }
+    
+        $randomSmileService = new RandomSmileService();
+        
+        return array_map(function($item) use ($randomSmileService) {
+            $item['smile'] = $randomSmileService->getSmile();
+            return $item;
+        }, $questions);
+    }
+
+    public function addQuestion(string $question): void
+    {
+        if (!isset($_SESSION['questions'])) {
+            $_SESSION['questions'] = [];
+        }
+    
+        $_SESSION['questions'][] = ['text' => $question];
     }
 
     public function getQuestionsText(): array
@@ -174,5 +194,16 @@ class QuestionsService
         return array_map(function($el) {
             return $el['text'];
         }, $all);
+    }
+
+    public function getPaginatedQuestions(int $page, int $pageSize): array
+    {
+        $allQuestions = $this->getQuestions();
+        $questions = array_slice($allQuestions, ($page - 1) * $pageSize, $pageSize);
+
+        return [
+            'questions' => $questions,
+            'totalQuestions' => count($allQuestions),
+        ];
     }
 }
