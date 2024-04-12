@@ -164,12 +164,27 @@ class QuestionsService
 
     public function getQuestions(): array
     {
+        $questions = self::QUESTIONS;
+    
+        if (isset($_SESSION['questions'])) {
+            $questions = array_merge($_SESSION['questions'], $questions);
+        }
+    
         $randomSmileService = new RandomSmileService();
         
         return array_map(function($item) use ($randomSmileService) {
             $item['smile'] = $randomSmileService->getSmile();
             return $item;
-        }, self::QUESTIONS);
+        }, $questions);
+    }
+
+    public function addQuestion(string $question): void
+    {
+        if (!isset($_SESSION['questions'])) {
+            $_SESSION['questions'] = [];
+        }
+    
+        $_SESSION['questions'][] = ['text' => $question];
     }
 
     public function getQuestionsText(): array
