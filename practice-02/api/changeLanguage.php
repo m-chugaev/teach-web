@@ -6,7 +6,7 @@ $languageManager = new LanguageManager();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $language = $_POST['language'];
     $languageManager->setLanguage($language);
-    echo json_encode(['success' => true, 'language' => $languageManager->getCurrentLanguage()]);
+    $languageManager->renderResult(['success' => true, 'language' => $languageManager->getCurrentLanguage()]);
 } else {
-    echo json_encode(['language' => $languageManager->getCurrentLanguage()]);
+    $languageManager->renderResult(['language' => $languageManager->getCurrentLanguage()]);
 }

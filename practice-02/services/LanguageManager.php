@@ -1,6 +1,11 @@
 <?php
+
+include_once 'RenderResultTrait.php';
+
 class LanguageManager
 {
+    use RenderResultTrait;
+
     private $languages = ['ru', 'en'];
     private $currentLanguage;
 
