@@ -1,6 +1,6 @@
 <?php
-require_once 'components/LanguageSwitcher.php';
-$languageSwitcher = new LanguageSwitcher();
+require_once './services/LanguageManager.php';
+$languageSwitcher = new LanguageManager();
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +27,8 @@ $languageSwitcher = new LanguageSwitcher();
             <button class="js-generate-random-one"><?= $languageSwitcher->getTranslation('generate_random_one'); ?></button>
             <button disabled title="<?= $languageSwitcher->getTranslation('attempts'); ?>"><?= $languageSwitcher->getTranslation('attempts'); ?></button>
             <button disabled title="<?= $languageSwitcher->getTranslation('bonuses'); ?>"><?= $languageSwitcher->getTranslation('bonuses'); ?></button>
-            <?= $languageSwitcher->renderLanguageButtons(); ?>
         </div>
     </div>
 
-    <?= $languageSwitcher->render(); ?>
 </body>
 </html>

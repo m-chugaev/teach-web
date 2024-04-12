@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once '../classes/LanguageManager.php';
+require_once '../services/LanguageManager.php';
 
 $languageManager = new LanguageManager();
 
