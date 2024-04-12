@@ -21,7 +21,7 @@
             const questions = data.questions;
             questions.forEach((question, index) => {
                 const questionNode = document.createElement('li');
-                questionNode.textContent = question.text + " " + questions.smile;
+                questionNode.textContent = question.text + " " + question.smile;
 
                 container.appendChild(questionNode);
             });

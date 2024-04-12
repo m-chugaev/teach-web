@@ -1,5 +1,5 @@
 <?php
-class RandomSmileServise
+class RandomSmileService
 {
     public function getSmile()
     {
