@@ -167,7 +167,7 @@ class QuestionsService
         $questions = self::QUESTIONS;
     
         if (isset($_SESSION['questions'])) {
-            $questions = array_merge($questions, $_SESSION['questions']);
+            $questions = array_merge($_SESSION['questions'], $questions);
         }
     
         $randomSmileService = new RandomSmileService();
@@ -199,19 +199,7 @@ class QuestionsService
     public function getPaginatedQuestions(int $page, int $pageSize): array
     {
         $allQuestions = $this->getQuestions();
-        
-        if (empty($allQuestions)) {
-            return ['questions' => [], 'totalQuestions' => 0];
-        }
-
-        $newQuestions = $_SESSION['questions'] ?? [];
-        
-        $allQuestions = array_merge($newQuestions, $allQuestions);
-
-        $startIndex = ($page - 1) * $pageSize;
-        $endIndex = $startIndex + $pageSize;
-
-        $questions = array_slice($allQuestions, $startIndex, $pageSize);
+        $questions = array_slice($allQuestions, ($page - 1) * $pageSize, $pageSize);
 
         return [
             'questions' => $questions,
