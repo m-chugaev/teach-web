@@ -6,15 +6,15 @@ class CheckEmailService
 {
     use RenderResultTrait;
 
-    private const SESSION_KEY = 'email_valid';
+    private const SESSION_KEY = 'email';
 
     public function checkEmail()
     {
-        $email = $_POST["email"];
+        $email = 'email';
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return "Контакт сохранен"; //Не понимаю, тут нужно вернуть &email с чем-то или как?
+            return "Контакт сохранен"; 
         } else {
-            return "Ошибка валидации email"; //Не понимаю, тут нужно вернуть &email с чем-то или как?
+            return "Ошибка валидации email";
         }
     }
     public function getRequestsHistory(): string

@@ -1,7 +1,7 @@
 
     // only layout
 
-<div class="card fluid">
+<div class="check_email">
     <h2>Чекни свой email</h2>
 
     <div>
