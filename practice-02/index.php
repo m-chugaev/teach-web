@@ -29,5 +29,6 @@
     <?php include './components/questionsByIds/index.php'; ?>
     <?php include './components/questionsOfDay/index.php'; ?>
     <?php include './components/randomQuestionNotice/index.php'; ?>
+    <?php include './components/randomQuestionFrequency/index.php'; ?>
 </body>
 </html>

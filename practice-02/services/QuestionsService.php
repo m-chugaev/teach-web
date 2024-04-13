@@ -12,27 +12,35 @@ class QuestionsService
     private const QUESTIONS = [
         [
             'text' => "Что происходит в браузере после перехода по url",
+            'frequency' => 100
         ],
         [
             'text' => "Что такое клиент-серверная архитектура, какие особенности",
+            'frequency' => 50
         ],
         [
             'text' => "Расшифруйте HTTP, какие есть актуальные версии",
+            'frequency' => 40
         ],
         [
             'text' => "Какие бывают типы HTTP-запросов",
+            'frequency' => 30
         ],
         [
             'text' => "Какие бывают коды состояния ответа HTTP (категории в сотнях)",
+            'frequency' => 10
         ],
         [
             'text' => "Что такое CORS, зачем нужен, как избежать",
+            'frequency' => 10
         ],
         [
             'text' => "Что такое REST API, примеры url",
+            'frequency' => 10
         ],
         [
             'text' => "Что такое GraphQL, примеры тела запроса",
+            'frequency' => 10
         ],
         [
             'text' => "Что такое Cookie и зачем они используются",
@@ -205,5 +213,22 @@ class QuestionsService
             'questions' => $questions,
             'totalQuestions' => count($allQuestions),
         ];
+    }
+
+    public function calculateQuestionFrequencies(): array
+    {
+    $questions = $this->getQuestions();
+    $frequencies = [];
+
+    foreach ($questions as $question) {
+        $text = $question['text'];
+        if (isset($frequencies[$text])) {
+            $frequencies[$text]++;
+        } else {
+            $frequencies[$text] = 1;
+        }
+    }
+
+    return $frequencies;
     }
 }
