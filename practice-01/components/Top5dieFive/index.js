@@ -39,7 +39,8 @@ export default function Random5Questions() {
     }
 
     return (
-        <div>
+        <div className={styles.wrapper}>
+            <h2 className={styles.title}>Рандомные вопросы</h2>
             <form className={styles.container} onSubmit={handleSubmit}>
                 <button className={styles.button_1} type="submit">Сгенерировать</button>
                 <button className={styles.button_2} type="button" onClick={handleReset}>Сбросить</button>

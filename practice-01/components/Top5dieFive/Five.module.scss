@@ -1,26 +1,47 @@
+.wrapper {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 800px; /* Увеличение максимальной ширины контейнера */
+  margin: 20px auto 0;
+}
 
-  .container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Отступ между кнопками */
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-  // Применение стилей для кнопки
-  .button_1 {
+.title {
+  text-align: center; /* Центрирование текста */
+  font-size: 1.5rem; /* Установка размера шрифта */
+}
 
-    color: rgb(95, 160, 250); // Установка цвета текста кнопки
-    padding: 10px 20px; // Задание отступов вокруг текста кнопки
-    border: none; // Удаление границы кнопки
-    border-radius: 10px; // Закругление углов кнопки
-    cursor: pointer; // Изменение курсора при наведении на кнопку
-  }
+.button_1 {
+  color: #ffffff; // Изменение цвета текста кнопки на белый
+  background-color: #007bff; // Изменение цвета фона кнопки
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; // Плавное изменение цвета фона при наведении
+}
 
-  .button_2 {
+.button_1:hover {
+  background-color: #0056b3; // Изменение цвета фона кнопки при наведении
+}
 
-    color: rgb(255, 75, 75); // Установка цвета текста кнопки
-    padding: 10px 20px; // Задание отступов вокруг текста кнопки
-    border: none; // Удаление границы кнопки
-    border-radius: 10px; // Закругление углов кнопки
-    cursor: pointer; // Изменение курсора при наведении на кнопку
-  }
+.button_2 {
+  color: #ffffff; // Изменение цвета текста кнопки на белый
+  background-color: #dc3545; // Изменение цвета фона кнопки
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; // Плавное изменение цвета фона при наведении
+}
+
+.button_2:hover {
+  background-color: #bd2130; // Изменение цвета фона кнопки при наведении
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Отступ между кнопками */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

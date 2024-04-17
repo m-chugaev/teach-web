@@ -1,0 +1,42 @@
+.container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto 0;
+    text-align: center; /* Выравнивание заголовков по центру */
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.list {
+    margin-top: 20px; /* Добавлен отступ сверху для контейнера с вопросами */
+    text-align: left; /* Выравнивание рандомных вопросов по левому краю */
+}
+
+.history {
+    margin-top: 20px;
+}
+
+.history h2 {
+    margin-bottom: 10px;
+}
+
+.history ol {
+    text-align: left; /* Выравнивание текста в списке по левому краю */
+}
