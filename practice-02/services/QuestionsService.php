@@ -217,18 +217,14 @@ class QuestionsService
 
     public function calculateQuestionFrequencies(): array
     {
-    $questions = $this->getQuestions();
-    $frequencies = [];
+        $questions = $this->getQuestions();
+        $frequencies = [];
 
-    foreach ($questions as $question) {
-        $text = $question['text'];
-        if (isset($frequencies[$text])) {
-            $frequencies[$text]++;
-        } else {
-            $frequencies[$text] = 1;
+        foreach ($questions as $question) {
+            $text = $question['text'];
+            $frequencies[$text] = $question['frequency'] ?? 1;
         }
-    }
 
-    return $frequencies;
+        return $frequencies;
     }
 }
