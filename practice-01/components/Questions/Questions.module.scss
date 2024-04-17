@@ -1,8 +1,9 @@
 .container {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    color: #475467;
-    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    font-size: 16px;
     line-height: 1.5;
+    
 }
 
 .tags {
@@ -12,7 +13,7 @@
 .tags span {
     display: inline-block; 
     padding: 8px; 
-    background-color: #333333; 
+    background-color: #007bff; /* изменение цвета фона */
     color: #ffffff; 
     border-radius: 5px; 
     margin-right: 8px; 
@@ -27,45 +28,52 @@
     display: flex;
     padding-top: 5px;
     padding-bottom: 5px;
-    -webkit-box-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
     align-items: center;
 }
 
 .large {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    letter-spacing: normal;
-    font-weight: 500;
-    color: #101828;
+    font-size: 1.5rem; /* увеличение размера шрифта */
+
+    color: #101828; 
 }
 
 .accord {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     flex-direction: column;
-    -webkit-box-pack: start;
     justify-content: flex-start;
-    -webkit-box-align: stretch;
     align-items: stretch;
-    border-bottom: 1px solid #eaecf0;
+    border-bottom: 1px solid #cccccc; /* изменение цвета границы */
 }
 
 .faqList {
-    max-width: 48rem;
-    margin-right: auto;
-    margin-left: auto;
+    max-width: 800px; /* увеличение максимальной ширины */
+    margin: 0 auto; /* центрирование на странице */
 }
 
 .title {
-    margin-top: 0rem;
+    margin-top: 2rem; /* увеличение отступа сверху */
     margin-bottom: 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    color: #101828;
-    font-size: 2.25rem;
-    line-height: 1.3;
-    font-weight: 600;
+    font-size: 2rem; /* уменьшение размера шрифта */
+    font-weight: bold; /* усиление шрифта */
     text-align: center;
+}
+.filterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* добавим отступ снизу */
+    border: 1px solid #ccc; /* добавим рамку */
+    padding: 10px; /* добавим отступ внутри рамки */
+}
+
+.label {
+    margin-right: 10px; /* добавим отступ справа для метки */
+}
+
+/* Обновленные стили для селекта */
+.select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
