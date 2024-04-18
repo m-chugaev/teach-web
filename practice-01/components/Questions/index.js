@@ -1,12 +1,24 @@
 'use client';
-
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Questions.module.scss';
 import questions from "../../questions.js";
 
 export default function Questions() {
-    const [filter, setFilter] = useState("all"); 
+    const [filter, setFilter] = useState("all");
     const [filteredQuestions, setFilteredQuestions] = useState([]);
+
+    const getRandomEmoji = () => {
+        const emojis = ["😊", "🎉", "🤔", "👍", "😄", "🎨"];
+        return emojis[Math.floor(Math.random() * emojis.length)];
+    };
+
+    const getQuestionsWithSmiles = () => {
+        return questions.map((el) => {
+            const elCopy = { ...el };
+            elCopy.text = el.text + " " + getRandomEmoji();
+            return elCopy;
+        });
+    };
 
     useEffect(() => {
         const filtered = getQuestionsWithSmiles().filter(question => {
@@ -23,23 +35,9 @@ export default function Questions() {
         setFilter(e.target.value);
     };
 
-    const getQuestionsWithSmiles = () => {
-        return questions.map((el) => {
-            const elCopy = Object.assign({}, el)
-            elCopy.text = el.text + " " + getRandomEmoji();
-            return elCopy;
-        });
-    }
- 
-    const getRandomEmoji = () => {
-        const emojis = ["😊", "🎉", "🤔", "👍", "😄", "🎨"];
-        return emojis[Math.floor(Math.random() * emojis.length)];
-    };
-
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Вопросы для собеседования</h2>
-
             <div className={styles.filterContainer}>
                 <label htmlFor="filter">Фильтр по тегам:</label>
                 <select id="filter" value={filter} onChange={handleFilterChange}>
@@ -54,29 +52,24 @@ export default function Questions() {
                 </select>
             </div>
             <div className={styles.list}>
-                {filteredQuestions.map(function(question, index) {
-                    return <div className={styles.ac} key={index}>
+                {filteredQuestions.map((question, index) => (
+                    <div className={styles.ac} key={index}>
                         <div className={styles.faqList}>
                             <div className={styles.accord}>
                                 <div className={styles.question}>
                                     <div className={styles.large}>
-                                        <span>{index+1}. {question.text}</span>
+                                        <span>{index + 1}. {question.text}</span>
                                     </div>
-
                                     <div className={styles.tags}>
-                                        {question.tags.map(function (tag, index) {
-                                            return (
-                                                <span key={index}>
-                                                    {tag}
-                                                </span>
-                                            );
-                                        })}
+                                        {question.tags.map((tag, tagIndex) => (
+                                            <span key={tagIndex}>{tag}</span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>;
-                })}
+                    </div>
+                ))}
             </div>
         </div>
     );
