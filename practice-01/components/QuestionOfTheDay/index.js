@@ -1,6 +1,7 @@
-'use client';
+'use client'
+
 import React, { useState, useEffect } from 'react';
-import questions from "@/questions";
+import questions from '@/questions';
 
 const QuestionOfTheDay = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

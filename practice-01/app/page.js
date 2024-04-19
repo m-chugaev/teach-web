@@ -1,3 +1,6 @@
+'use client';
+
+import React from 'react';
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Questions from '../components/Questions';
@@ -9,8 +12,8 @@ import RandomQuestionsFrequency from '../components/RandomQuestionsFrequency';
 import Comment from '../components/Comment/Comment';
 import SwitchTheme from "../components/SwitchTheme";
 import Random5Questions from "@/components/Top5dieFive";
-import QuestionOfTheDay from "@/components/QuestionOfTheDay";
-import Timer from "@/components/Timer"
+import QuestionOfTheDay from "@/components/QuestionOfDay";
+import Timer from "@/components/Timer";
 
 export default function Home() {
   return (
