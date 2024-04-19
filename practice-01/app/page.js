@@ -11,6 +11,7 @@ import SwitchTheme from "../components/SwitchTheme";
 import Random5Questions from "@/components/Top5dieFive";
 import QuestionOfTheDay from "@/components/QuestionOfTheDay";
 import Timer from "@/components/Timer"
+import RandomQuestionNotice from '../components/RandomQuestionNotice';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <RandomQuestions />
       <RandomQuestionsList />
       <RandomQuestionsFrequency />
+      <RandomQuestionNotice />
       <JokeNotice />
       <QuestionNotice />
       <SwitchTheme />
