@@ -32,5 +32,6 @@
     <?php include './components/randomQuestionFrequency/index.php'; ?>
     <?php include './components/TextValidator/index.php'; ?>
     <?php include './components/checkEmail/index.php'; ?>
+    <?php include './components/3input/index.php'; ?>
 </body>
 </html>
