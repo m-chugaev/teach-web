@@ -29,6 +29,7 @@
     <?php include './components/questionsByIds/index.php'; ?>
     <?php include './components/questionsOfDay/index.php'; ?>
     <?php include './components/randomQuestionNotice/index.php'; ?>
+    <?php include './components/comments/index.php'?>
     <?php include './components/TextValidator/index.php'; ?>
     <?php include './components/checkEmail/index.php'; ?>
 </body>
